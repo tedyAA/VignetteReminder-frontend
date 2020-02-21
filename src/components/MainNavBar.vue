@@ -52,7 +52,7 @@
     }
     .col-sm-9{
     height: 100px;
-    background-color:#2aabd2;
+    background-color:#009edf;
     border-bottom: 2px solid  #23282e;
     opacity: 0.9;
         font-style: oblique;
@@ -87,7 +87,7 @@
     .nav-side-menu li {
     list-style: none;
     padding: 0px;
-    margin: 0px;
+    /*margin: 0px;*/
     line-height: 35px;
     cursor: pointer;
     /*
@@ -175,7 +175,7 @@
     .nav-side-menu {
     position: relative;
     width: 100%;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     }
     .nav-side-menu .toggle-btn {
     display: block;
@@ -203,7 +203,7 @@
     }
     }
     body {
-    margin: 0px;
+    /*margin: 0px;*/
     padding: 0px;
     }
 

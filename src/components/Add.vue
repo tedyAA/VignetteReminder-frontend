@@ -29,7 +29,7 @@
                         </div>
                     </div>
 
-                    <button type="submit">SUBMIT</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
 
                 </form>
             </div>
@@ -64,12 +64,16 @@
         -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
         -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
         box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+        border-radius:30px;
 
 
     }
     span.input-group-addon i {
         color: #009edf;
         font-size: 17px;
+    }
+    .btn btn-primary{
+        border-radius: 30px;
     }
 
 </style>

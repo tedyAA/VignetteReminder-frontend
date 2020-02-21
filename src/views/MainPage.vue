@@ -1,7 +1,7 @@
 <template>
   <div class="MainNavBar">
     <main-nav-bar></main-nav-bar>
-    <car-window></car-window>
+<!--    <car-window></car-window>-->
 
 
   </div>
@@ -9,12 +9,12 @@
 
 <script>
    import MainNavBar from "../components/MainNavBar.vue";
-   import CarWindow from "../components/CarWindow";
+   // import CarWindow from "../components/CarWindow";
 
   export default {
     components:{
       MainNavBar,
-      CarWindow
+      // CarWindow
 
     }
   }

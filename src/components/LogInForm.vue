@@ -56,11 +56,14 @@
     .login-wrap{
         width: 100%;
         margin:auto;
+        margin-top: 20px;
         max-width:510px;
         min-height:510px;
         position:relative;
         background:#009edf;
         background-size: cover;
+        border-radius:30px;
+        /*opacity: 0.3;*/
         /*box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);*/
     }
     .login-html{

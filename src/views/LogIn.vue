@@ -1,15 +1,19 @@
 <template>
   <div class = "login">
+    <upper-nav-bar></upper-nav-bar>
     <log-in-form/>
+
   </div>
 </template>
 
 <script>
   import LogInForm from "../components/LogInForm.vue";
+  import UpperNavBar from "../components/UpperNavBar.vue";
   export default {
     name: "LogIn",
     components:{
-      LogInForm
+      LogInForm,
+      UpperNavBar
     }
   }
 
