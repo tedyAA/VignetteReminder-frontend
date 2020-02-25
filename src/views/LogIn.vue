@@ -1,6 +1,13 @@
 <template>
   <div class = "login">
-    <upper-nav-bar></upper-nav-bar>
+    <upper-nav-bar>
+      <slot>
+        <div clas="new">
+
+        </div>
+      </slot>
+    </upper-nav-bar>
+
     <log-in-form/>
 
   </div>
@@ -25,5 +32,8 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-  }
+  }.new{
+
+     }
+
 </style>

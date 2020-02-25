@@ -15,17 +15,11 @@
                             <li data-toggle="collapse" data-target="#new" class="collapsed">
                                 <button class="fa fa-car fa-lg" @click="newCar"></button> New
                             </li>
-                            <a href="#">
-                                <button class="fa fa-car fa-lg" @click="navigateToHome" ></button>
-                            </a>
-
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-9 col-sm-offset-1">
-                <h1>Hello!!!</h1>
-            </div>
+
         </div>
     </div>
 </template>

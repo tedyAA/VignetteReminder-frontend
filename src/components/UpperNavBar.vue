@@ -1,12 +1,12 @@
 <template>
     <div>
       <div class="container">
-          <div class="buttons">
-          <button type="button" class="btn btn-primary">Home</button>
-          <button type="button" class="btn btn-primary">Dashboard</button>
-          <button type="button" class="btn btn-primary">About Us</button>
-          <button type="button" class="btn btn-primary">History</button>
-              </div>
+          <ul>
+              <li><a class="active" href="#home">Home</a></li>
+              <li><a href="#news">Dashboard</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#about">About Us</a></li>
+          </ul>
       </div>
     </div>
 </template>
@@ -18,12 +18,30 @@
 </script>
 
 <style scoped>
-.nav{
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color:#438acf;
+    }
 
-}
+    li {
+        float: left;
+    }
 
-.nav{
-    background-color: rgba(0, 158, 223, 0.1);
-    height: 50px;
-}
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 15px 99px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color:#009edf ;
+    }.container{
+        /*margin-left: 320px;*/
+
+         }
 </style>

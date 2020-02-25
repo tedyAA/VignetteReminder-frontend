@@ -13,8 +13,8 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="VIN">Enter Car VIN</label>
+                    <div class="group">
+                        <label for="VIN" >Enter Car VIN</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
                             <input type="text" class="form-control" name="VIN" placeholder="Enter VIN number"/>
