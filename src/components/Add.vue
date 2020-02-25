@@ -4,32 +4,27 @@
             <div class="main-center">
                 <h5>Enter car info.</h5>
                 <form class="" method="post" action="#">
-
                     <div class="form-group">
-                        <label for="carN">Enter Your Car Registration Number</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="carN" id="carN"  placeholder="Enter car №"/>
+                        <label for="carN" class="cols-sm-2 control-label">Enter Your Car Registration Number</label>
+                        <div class="input">
+                            <input type="password" class="form-control" placeholder="Enter car №">
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <label for="VIN" class="cols-sm-2 control-label">Enter Car VIN</label>
+                        <div class="input">
+                            <input type="password" class="form-control" placeholder="Enter VIN number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sticker" class="cols-sm-2 control-label">Enter Car Sticker Number</label>
+                        <div class="input">
+                            <input type="password" class="form-control" placeholder="Enter sticker N">
+                        </div>
+                    </div>
                     <div class="group">
-                        <label for="VIN" >Enter Car VIN</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="VIN" placeholder="Enter VIN number"/>
-                        </div>
+                        <input type="submit" class="button" value="Submit">
                     </div>
-
-                    <div class="form-group">
-                        <label for="sticker">Enter Car Sticker Number</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" name="sticker" placeholder="Enter sticker N"/>
-                        </div>
-                    </div>
-
-                    <button type="button" class="btn btn-primary">Submit</button>
 
                 </form>
             </div>
@@ -74,6 +69,24 @@
     }
     .btn btn-primary{
         border-radius: 30px;
-    }
+    }.form-control {
+         border: none;
+         padding: 15px 20px;
+         border-radius: 25px;
+         background: rgba(255, 255, 255, .1);
+         width: 100%;
+         color: #fff;
+         display: block;
+     } .button {
+           text-transform: uppercase;
+           border-radius: 50px;
+           width: 50%;
+           color: #2c3e50;
+           display: block;
+           border: none;
+           padding: 15px 20px;
+           border-radius: 25px;
+           background: rgba(44, 62, 80, 0.1);
+       }
 
 </style>

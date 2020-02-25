@@ -1,20 +1,29 @@
 <template>
     <div>
-      <div class="container">
-          <ul>
-              <li><a class="active" href="#home">Home</a></li>
-              <li><a href="#news">Dashboard</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#about">About Us</a></li>
-          </ul>
-      </div>
+        <div class="container">
+            <ul>
+                <li><a class="active" @click="home">Home</a></li>
+                <li><a @click="logIn">Log In</a></li>
+                <li><a @click="home">Contact</a></li>
+                <li><a @click="home">About Us</a></li>
+            </ul>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "UpperNavBar"
+        name: "UpperNavBar",
+        methods: {
+            home() {
+                this.$router.push('/welcome')
+            },
+            logIn() {
+                this.$router.push('/')
+            }
+        }
     }
+
 </script>
 
 <style scoped>
@@ -23,7 +32,7 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color:#438acf;
+        background-color: #438acf;
     }
 
     li {
@@ -39,9 +48,11 @@
     }
 
     li a:hover {
-        background-color:#009edf ;
-    }.container{
+        background-color: #009edf;
+    }
+
+    .container {
         /*margin-left: 320px;*/
 
-         }
+    }
 </style>

@@ -41,7 +41,7 @@
     background-size: cover;
   
   }.nav{
-    margin-left: 150px;
+       /*margin-left: 150px;*/
      }
 
   </style>

@@ -7,7 +7,6 @@
 
 
 </template>
-
 <script>
     export default {
         name: "WelcomeForm"
@@ -17,7 +16,7 @@
 <style scoped>
 .container{
     width: 900px;
-    height: 400px;
+    height: 200px;
     margin-top: 50px;
     background-color: #00CED1;
     background-color: rgba(0, 206, 209, 0.5);

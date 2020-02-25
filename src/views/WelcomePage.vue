@@ -1,16 +1,33 @@
 <template>
     <div class="WelcomeForm">
+        <upper-nav-bar></upper-nav-bar>
         <welcome-form> </welcome-form>
-        <button class="move1" @click="logIn">Log in</button>
-        <button class="move1" @click="reg">Register</button>
+
+
+        <div class="row">
+            <div class="col-lg-6">
+                <news-window></news-window>
+            </div>
+            <div class="col-lg-6">
+                <package-window></package-window>
+            </div>
+        </div>
+<!--        <button class="move1" @click="logIn">Log in</button>-->
+<!--        <button class="move1" @click="reg">Register</button>-->
     </div>
 </template>
 
 <script>
     import WelcomeForm from "../components/WelcomeForm.vue";
+    import UpperNavBar from "../components/UpperNavBar";
+    import NewsWindow from "../components/NewsWindow";
+    import PackageWindow from "../components/PackageWindow";
     export default {
         components:{
-            WelcomeForm
+            WelcomeForm,
+            UpperNavBar,
+            NewsWindow,
+            PackageWindow
         },
         methods:{
             logIn(){
