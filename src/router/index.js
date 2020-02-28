@@ -6,6 +6,8 @@ import WelcomePage from "../views/WelcomePage";
 import Register from "../views/Register";
 import CarPage from "../views/CarPage";
 import AddCar from "../views/AddCar";
+import Contacts from "../views/Contacts";
+import UserProfile from "../views/UserProfile";
 
 Vue.use(VueRouter)
 
@@ -34,6 +36,16 @@ const routes = [
     path: '/car',
     name: 'car',
     component: CarPage
+  },
+  {
+    path: '/contacts',
+    name: 'contacts',
+    component: Contacts
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: UserProfile
   },
   {
     path: '/add',

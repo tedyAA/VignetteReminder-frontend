@@ -22,7 +22,7 @@
         background-color: #00CED1;
         background-color: rgba(0, 206, 209, 0.5);
         opacity: inherit;
-        margin-left: 150px;
+        /*margin-left: 150px;*/
     }.p{
         font-size:25px ;
          }

@@ -12,7 +12,7 @@
             </td>
             <td>
 
-        <input class="form-control" type="text" v-model="invoice.Type"/>
+        <input class="form-control" type="text" v-model="invoice.Type" />
 
             </td>
             <td>
