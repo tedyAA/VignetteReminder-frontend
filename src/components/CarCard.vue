@@ -36,6 +36,7 @@
         background-color: #a5f7ff;
         width: 150px!important;
         height: 150px!important;
+        font-family: Pacifico;
     }
 
 </style>

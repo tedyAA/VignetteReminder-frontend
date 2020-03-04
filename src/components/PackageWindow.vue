@@ -18,10 +18,9 @@
     width: 500px;
     height: 200px;
     margin-top: 50px;
-    background-color: #00CED1;
-    background-color: rgba(0, 206, 209, 0.5);
+    background-color: rgba(0, 158, 223, 0.8);
     opacity: inherit;
-    /*float:right;*/
+    border-radius: 25px;
 }.p{
      font-size:25px ;
  }

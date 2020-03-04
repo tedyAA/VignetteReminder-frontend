@@ -1,16 +1,4 @@
 <template>
-    <!--    <div>-->
-    <!--        <div class="container">-->
-    <!--            <ul>-->
-    <!--                <li class="link"><a class="active" @click="home">Home</a></li>-->
-    <!--                <li class="link"><a @click="logIn">Log In</a></li>-->
-    <!--                <li class="link"><a @click="home">Contact</a></li>-->
-    <!--                <li class="link"><a @click="home">About Us</a></li>-->
-    <!--            </ul>-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!--    <link rel="stylesheet" type="text/css" href="css/style.css">-->
-    <!--    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">-->
     <ul>
         <li><a class="active" @click="home">Home</a></li>
         <li><a @click="contacts">Contact</a></li>
@@ -59,19 +47,19 @@
 
     li a {
         display: block;
-        color: #fff;
+        color: #000000;
         padding: 14px 16px;
         text-decoration: none;
         font-size: 20px;
     }
 
     li a:hover {
-        background-color: #f2f2f2;
+        background-color: #009edf;
         color: #000;
     }
 
     .active {
-        color: #fff;
+        color: #009edf;
         background-color: #009edf;
     }
 

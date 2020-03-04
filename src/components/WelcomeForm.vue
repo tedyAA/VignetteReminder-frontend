@@ -18,12 +18,12 @@
     width: 900px;
     height: 200px;
     margin-top: 50px;
-    background-color: #00CED1;
-    background-color: rgba(0, 206, 209, 0.5);
+    background-color: rgba(0, 158, 223, 0.8);
     opacity: inherit;
+    border-radius: 25px;
 
 }.text{
-    font-family: Corbel;
+    font-family: Pacifico;
     font-size: medium;
  }
 

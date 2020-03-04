@@ -1,18 +1,19 @@
 <template>
     <div>
         <upper-nav-bar></upper-nav-bar>
-        <contacts-form></contacts-form>
+        <contact-us-form></contact-us-form>
+
     </div>
 </template>
 
 <script>
     import UpperNavBar from "../components/UpperNavBar";
-    import ContactsForm from "../components/ContactsForm";
+    import ContactUsForm from "../components/ContactUsForm";
 
     export default {
         components: {
            UpperNavBar,
-            ContactsForm
+            ContactUsForm
         }
     }
 </script>
