@@ -1,48 +1,46 @@
 <template>
-  <div class="MainNavBar">
-    <main-nav-bar></main-nav-bar>
-<upper-main-nav-bar></upper-main-nav-bar>
-      <car-card></car-card>
-      <div class="nav">
+    <div class="MainNavBar">
+        <main-nav-bar></main-nav-bar>
+        <upper-main-nav-bar></upper-main-nav-bar>
+        <car-card></car-card>
+        <div class="nav">
 
-      <ul>
-        <li><a href="#about">Vehicles</a></li>
-      </ul>
-      </div>
-
-<!--    <car-window></car-window>-->
-
-
-  </div>
+            <ul>
+                <li><a href="#about">Vehicles</a></li>
+            </ul>
+        </div>
+    </div>
 </template>
 
 <script>
-   import MainNavBar from "../components/MainNavBar.vue";
-   import UpperMainNavBar from "../components/UpperMainNavBar.vue";
-   // import CarWindow from "../components/CarWindow";
-   import CarCard from "../components/CarCard";
+    import MainNavBar from "../components/MainNavBar.vue";
+    import UpperMainNavBar from "../components/UpperMainNavBar.vue";
+    // import CarWindow from "../components/CarWindow";
+    import CarCard from "../components/CarCard";
 
-  export default {
-    components:{
-      MainNavBar,
-      UpperMainNavBar,
-      CarCard
-      // CarWindow
+    export default {
+        components: {
+            MainNavBar,
+            UpperMainNavBar,
+            CarCard
+            // CarWindow
 
+        }
     }
-  }
 
 </script>
 <style scoped>
-  body{
+    body {
 
-    background-image: url("ay.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  
-  }.nav{
-       /*margin-left: 150px;*/
-     }
+        background-image: url("ay.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
 
-  </style>
+    }
+
+    .nav {
+        /*margin-left: 150px;*/
+    }
+
+</style>
 

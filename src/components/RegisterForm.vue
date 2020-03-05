@@ -1,5 +1,4 @@
 <template>
-    <body>
     <div class="container">
         <form class="form-horizontal" role="form" method="POST" action="/register">
             <div class="row">
@@ -18,21 +17,20 @@
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
                             <input type="text" name="name" class="form-control" id="name"
-                                   placeholder="John Doe" required autofocus>
+                                   placeholder="John" required autofocus>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-3 field-label-responsive">
-                        <label for="name">Last Name</label>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-                                <input type="text" name="name" class="form-control" id="Lname"
-                                       placeholder="John Doe" required autofocus>
-                            </div>
+              <p>.</p>
+                <div class="col-md-3 field-label-responsive">
+                    <label for="name">Last Name</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                            <input type="text" name="name" class="form-control" id="Lname"
+                                   placeholder="Doe" required autofocus>
                         </div>
                     </div>
                 </div>
@@ -107,7 +105,6 @@
             </div>
         </form>
     </div>
-    </body>
 </template>
 
 <script>
