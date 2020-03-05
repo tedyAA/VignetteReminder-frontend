@@ -1,7 +1,7 @@
 <template>
     <div class="MainNavBar">
         <main-nav-bar></main-nav-bar>
-        <upper-nav-bar></upper-nav-bar>
+      <upper-main-nav-bar></upper-main-nav-bar>
         <car-table></car-table>
         </div>
 </template>
@@ -9,12 +9,12 @@
 <script>
     import MainNavBar from "../components/MainNavBar.vue";
     import CarTable from "../components/CarTable";
-    import UpperNavBar from "../components/UpperNavBar";
+    import UpperMainNavBar from "../components/UpperMainNavBar";
     export default {
         components:{
             MainNavBar,
             CarTable,
-            UpperNavBar
+            UpperMainNavBar
         }
     }
 

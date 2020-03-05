@@ -5,6 +5,18 @@
                 <form id=" AddCarForm">
                     <h5>Enter car info.</h5>
                     <form class="" method="post" action="#">
+<!--                        <div class="form-group">-->
+<!--                            <label for="carN" class="cols-sm-2 control-label">Enter Your Vehicle Type</label>-->
+
+<!--                                <div class="form-group">-->
+<!--                                    <select class="form-group">-->
+<!--                                        <option></option>-->
+<!--                                        <option>Car</option>-->
+<!--                                        <option>Motorcycle</option>-->
+<!--                                        <option>Trailer</option>-->
+<!--                                    </select>-->
+<!--                                </div>-->
+<!--                            </div>-->
                         <div class="form-group">
                             <label for="carN" class="cols-sm-2 control-label">Enter Your Car Registration Number</label>
                             <div class="input">

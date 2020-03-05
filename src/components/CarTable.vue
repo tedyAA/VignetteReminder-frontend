@@ -1,45 +1,58 @@
 <template>
-    <div class="container">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <tytle class="mr-5">Type</tytle>
-        <tytle class="mr-5">Start Date</tytle>
-        <tytle class="mr-5">End Date </tytle>
-        <tytle class="mr-5">Note</tytle>
-        <tr v-for="(invoice, index) in invoice" :key="index">
-            <td scope="row" class="trashIconContainer">
+    <div id="chartpanel" class="row" data-equalizer>
 
-            </td>
-            <td>
-
-        <input class="form-control" type="text" v-model="invoice.Type" />
-
-            </td>
-            <td>
-
-                <input class="form-control" type="text" v-model="invoice.SDate" />
-            </td>
-            <td>
-
-                <input class="form-control" type="text" v-model="invoice.EDate" />
-            </td>
-            <td>
-
-                <input class="form-control" type="text" v-model="invoice.Note" />
-            </td>
-            <td>
-                <i class="far fa-trash-alt" @click="deleteRow(index)"></i>
-            </td>
-        </tr>
-        <button type='button' class="btn btn-info" @click="addNewRow">
-            <i class="btn"></i>
-            Add
-        </button>
-        <tytle class="mr-5"></tytle>
+        <div class="column small-12 left_panel" >
+            <header data-equalizer-watch>
+                <i class="fa fa-bars menu_top_icon" aria-hidden="true"></i>
+                <div class="right_nav">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <i class="fa fa-link" aria-hidden="true"></i>
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </div>
+                <charttitle> </charttitle>
+            </header>
 
 
-        </div>
+            <div id="chart_table">
+                <form id="chart_datas"  >
+                    <div class="grid-container">
+                        <div class="grid-x grid-padding-x input_wrp">
+                            <div class="small-1 cell column">
+                                <label>
+                                    <input type="text" placeholder="id">
+                                </label>
+                            </div>
+                            <div class="small-2 cell column">
+                                <label>
+                                    <input type="text" placeholder="value" v-model="value" id="value" name="value">
+                                </label>
+                            </div>
+                            <div class="small-6 cell column">
+                                <label>
+                                    <input type="text" placeholder="Label" v-model="label" id="label" name="label">
+                                </label>
+                            </div>
+                            <div class="small-3 cell column">
+                                <label>
+                                    <input type="text" placeholder="Icon" v-model="icon" id="icon" name="icon">
+                                </label>
+                            </div>
+                        </div>
 
+                        <div class="addRowBtn" v-on:click.prevent="addRow" value=""><i class="fa fa-plus" aria-hidden="true"></i></div>
+                    </div>
+
+                </form>
+
+                <charttable v-bind:proplabels="labels"> </charttable>
+            </div>
+        </div> <!-- end left panel -->
+        <!--<div class="column small-12 medium-4 right_panel">
+          <header data-equalizer-watch>
+      <chartsubtitle> </chartsubtitle>
+          </header>
+        </div> -->
+    </div>
 </template>
 
 <script>
@@ -51,21 +64,16 @@
                     Type: '',
                     SDate: '',
                     EDate: '',
-                   Note: '',
+                    Note: '',
                 }]
             }
-
         },
-
         methods: {
             saveInvoice() {
                 // console.log(JSON.stringify(this.invoice));
             },
-
-
             deleteRow(index) {
                 this.invoice.splice(index,1)
-
             },
             addNewRow() {
                 this.invoice.push({
@@ -77,25 +85,22 @@
                 // addToData({
                 //
                 // });
-                }
             }
-
+        }
     }
 </script>
 
 <style scoped>
-   .container{
-       margin-left: 400px;
-       margin-top: 30px;
-       width: 650px;
-   }
- .mr-5{
-       color: black;
-     text-align: center;
-     text-decoration: none;
-     font-size: 28px;
-     font-family: "Amiri Quran";
- }.btn btn-info{
-
-   }
+    .container{
+        margin-left: 400px;
+        margin-top: 30px;
+        width: 650px;
+    }
+    .mr-5{
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        font-size: 28px;
+        font-family: "Amiri Quran";
+    }
 </style>
