@@ -3,9 +3,9 @@
         <div class="card" style="width: 18rem;" v-for="fruit in fruits" :key="fruit">
             <div>
                 <div class="card-body">
+                    <h4>Registration number</h4>
                     <h5 class="card-title">{{fruit}}</h5>
                     <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
                 </div>
             </div>
         </div>
@@ -31,12 +31,21 @@
 
 <style scoped>
     .card {
-        margin-left: 400px;
+        margin-left: 300px;
         margin-top: 50px;
-        background-color: #a5f7ff;
-        width: 150px!important;
-        height: 150px!important;
+        width: 200px !important;
+        height: 200px !important;
         font-family: Pacifico;
+        border-radius: 30px;
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+        background-color: rgba(0, 158, 223, 0.8);
     }
+
+    /*.container {*/
+    /*    display: table;*/
+    /*    clear: both;*/
+    /*    float: left;*/
+    /*}*/
+
 
 </style>

@@ -122,12 +122,15 @@
         }
         .container{
             width: 900px;
-            height: 500px;
+            height: 420px;
             margin-top: 50px;
-            background-color: #00CED1;
-            background-color: rgba(0, 206, 209, 0.5);
+            border-radius: 30px;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+            background-color: rgba(0, 158, 223, 0.8);
             opacity: inherit;
-
-                 }
+        }
+    }.form-control{
+        border-radius: 30px;
+        background: rgba(175, 218, 235, 0.34);
     }
 </style>
