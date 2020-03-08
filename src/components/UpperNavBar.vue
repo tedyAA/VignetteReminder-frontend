@@ -3,7 +3,7 @@
         <li><a class="active" @click="home">Home</a></li>
         <li><a @click="contacts">Contact</a></li>
         <li><a href="#about">About</a></li>
-        <li><a @click="profile">Profile</a></li>
+<!--        <li><a @click="profile">Profile</a></li>-->
 
 
     </ul>
