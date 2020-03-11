@@ -1,30 +1,32 @@
 <template>
-    <div class="nav-side-menu">
-        <div class="brand">Brand Logo</div>
-        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    <div class="col-4 col-lg-3 px-0">
+        <div class="nav-side-menu w-100">
+            <div class="brand">Brand Logo</div>
+            <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
-        <div class="menu-list">
+            <div class="menu-list">
 
-            <ul id="menu-content" class="menu-content collapse out">
-                <li>
-                    <a href="#">
-                        <i @click="dashboard"></i> Dashboard
-                    </a>
-                </li>
+                <ul id="menu-content" class="menu-content collapse out">
+                    <li>
+                        <a href="#">
+                            <i @click="dashboard"></i> Dashboard
+                        </a>
+                    </li>
 
-                <li data-toggle="collapse" data-target="#new" class="collapsed">
-                    <a href="#"><i class="fa fa-car fa-lg"></i> New </a>
-                </li>
+                    <li data-toggle="collapse" data-target="#new" class="collapsed">
+                        <a href="#"><i class="fa fa-car fa-lg"></i> New </a>
+                    </li>
 
-                <li>
-                    <a href="#">
-                        <i class="fa fa-user fa-lg"></i> Profile
-                    </a>
-                </li>
-            </ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-user fa-lg"></i> Profile
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
 
         </div>
-
     </div>
 
 </template>
@@ -48,9 +50,9 @@
         font-size: 12px;
         font-weight: 200;
         background-color: #2e353d;
-        position: fixed;
+        /*position: fixed;*/
         top: 0px;
-        width: 24%;
+        /*width: 24%;*/
         height: 100%;
         color: #e1ffff;
     }

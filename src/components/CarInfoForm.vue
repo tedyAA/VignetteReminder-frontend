@@ -107,7 +107,7 @@
     }
     .profile-content {
         padding: 20px;
-        min-height: 460px;
+        /*min-height: 460px;*/
         border-radius: 30px;
         box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
         background-color: rgba(0, 158, 223, 0.8);

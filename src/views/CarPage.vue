@@ -1,12 +1,16 @@
 <template>
-    <div class="MainNavBar">
-        <main-nav-bar></main-nav-bar>
-        <upper-nav-bar v-bind:style="{'margin-left':'320px'}">
-            <li><a @click="contacts">Contact</a></li>
-            <li><a @click="profile">Profile</a></li>
-            <li><a @click="logOut">Log out</a></li>
-        </upper-nav-bar>
-        <car-table></car-table>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <MainNavBar></MainNavBar>
+            <div class="col-8 col-lg-9 px-0">
+                <upper-nav-bar>
+                    <li><a @click="contacts">Contact</a></li>
+                    <li><a @click="profile">Profile</a></li>
+                    <li><a @click="logOut">Log out</a></li>
+                </upper-nav-bar>
+               <car-table></car-table>
+            </div>
+        </div>
     </div>
 </template>
 

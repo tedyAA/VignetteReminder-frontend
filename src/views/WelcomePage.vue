@@ -51,8 +51,8 @@
 
     body {
         background-image: url("ay.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
+        /*background-repeat: no-repeat;*/
+        /*background-size: cover;*/
     }
 
     .move1 {

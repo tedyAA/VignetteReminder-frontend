@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul>
-            <li><a class="active" @click="home">Home</a></li>
+            <li><a class="active" >Home</a></li>
             <slot></slot>
 
         </ul>

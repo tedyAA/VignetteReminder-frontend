@@ -69,7 +69,6 @@
 </script>
 <style scoped>
     .container{
-        margin-left: 400px;
         margin-top: 30px;
         width: 650px;
     }

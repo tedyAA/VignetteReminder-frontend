@@ -1,17 +1,15 @@
 <template>
-    <div class="MainNavBar">
-        <upper-nav-bar v-bind:style="{'margin-left':'320px'}">
-            <li><a @click="contacts">Contact</a></li>
-            <li><a @click="profile">Profile</a></li>
-            <li><a @click="logOut">Log out</a></li>
-        </upper-nav-bar>
-        <main-nav-bar></main-nav-bar>
-        <car-card v-bind:style="{'margin-left':'400px'}"></car-card>
-        <div class="nav">
-
-            <ul>
-                <li><a href="#about">Vehicles</a></li>
-            </ul>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <MainNavBar></MainNavBar>
+            <div class="col-8 col-lg-9 px-0">
+                <upper-nav-bar>
+                    <li><a @click="contacts">Contact</a></li>
+                    <li><a @click="profile">Profile</a></li>
+                    <li><a @click="logOut">Log out</a></li>
+                </upper-nav-bar>
+                <car-card></car-card>
+            </div>
         </div>
     </div>
 </template>
@@ -46,7 +44,7 @@
     body {
         background-image: url("ay.jpg");
         background-repeat: no-repeat;
-        background-size: cover;
+
     }
     .nav {
         /*margin-left: 150px;*/
