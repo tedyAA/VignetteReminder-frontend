@@ -1,12 +1,12 @@
 <template>
-    <ul>
-        <li><a class="active" @click="home">Home</a></li>
-        <li><a @click="contacts">Contact</a></li>
-        <li><a href="#about">About</a></li>
-<!--        <li><a @click="profile">Profile</a></li>-->
+    <div>
+        <ul>
+            <li><a class="active" @click="home">Home</a></li>
+            <slot></slot>
 
+        </ul>
 
-    </ul>
+    </div>
 </template>
 
 <script>
@@ -22,8 +22,8 @@
             contacts() {
                 this.$router.push('/contacts')
             },
-            profile() {
-                this.$router.push('/profile')
+            register() {
+                this.$router.push('/register')
             }
         }
     }

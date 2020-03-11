@@ -8,6 +8,7 @@ import CarPage from "../views/CarPage";
 import AddCar from "../views/AddCar";
 import Contacts from "../views/Contacts";
 import UserProfile from "../views/UserProfile";
+import CarInfo from "../views/CarInfo";
 
 Vue.use(VueRouter)
 
@@ -51,6 +52,11 @@ const routes = [
     path: '/add',
     name: 'add',
     component: AddCar
+  },
+  {
+    path: '/info',
+    name: 'info',
+    component: CarInfo
   },
   {
     path:'*', redirect:'/main'

@@ -1,10 +1,10 @@
 <template>
-    <ul>
+    <ul class="container">
+<!--        w-100 d-flex justify-content-between-->
         <li><a class="active" @click="home">Home</a></li>
         <li><a @click="contacts">Contact</a></li>
         <li><a href="#about">About</a></li>
         <li><a @click="profile">Profile</a></li>
-
 
     </ul>
 </template>
@@ -37,7 +37,7 @@
         overflow: hidden;
         background-color: #438acf;
         width: 76.5%;
-        margin-left:320px;
+        /*margin-left:320px;*/
 
     }
 

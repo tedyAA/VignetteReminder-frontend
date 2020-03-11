@@ -1,27 +1,4 @@
 <template>
-<!--    <div  class="container-fluid">-->
-<!--        <div class="row">-->
-<!--            <div class="col-sm-3">-->
-<!--                <div class="nav-side-menu">-->
-<!--                    <div class="brand">Brand Logo</div>-->
-<!--                    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>-->
-<!--                    <div class="menu-list">-->
-<!--                        <ul id="menu-content" class="menu-content collapse out">-->
-<!--                            <li>-->
-<!--                                <a href="#">-->
-<!--                                    <button class="fa fa-dashboard fa-lg" @click="dashboard"></button> Dashboard-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li data-toggle="collapse" data-target="#new" class="collapsed">-->
-<!--                                <button class="fa fa-car fa-lg" @click="newCar"></button> New-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--        </div>-->
-<!--    </div>-->
     <div class="nav-side-menu">
         <div class="brand">Brand Logo</div>
         <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
@@ -31,7 +8,7 @@
             <ul id="menu-content" class="menu-content collapse out">
                 <li>
                     <a href="#">
-                        <i class="fa fa-dashboard fa-lg" @click="dashboard"></i> Dashboard
+                        <i @click="dashboard"></i> Dashboard
                     </a>
                 </li>
 
@@ -55,7 +32,7 @@
     export default {
         name: "MainNavBar",
         methods:{
-           newCar(){
+            newCar(){
                 this.$router.push('/add')
             },
             dashboard(){
@@ -64,29 +41,28 @@
         }
     }
 </script>
-    <style scoped>
-
+<style scoped>
     .nav-side-menu {
-    overflow: auto;
-    font-family: verdana;
-    font-size: 12px;
-    font-weight: 200;
-    background-color: #2e353d;
-    position: fixed;
-    top: 0px;
-    width: 24%;
-    height: 100%;
-    color: #e1ffff;
+        overflow: auto;
+        font-family: verdana;
+        font-size: 12px;
+        font-weight: 200;
+        background-color: #2e353d;
+        position: fixed;
+        top: 0px;
+        width: 24%;
+        height: 100%;
+        color: #e1ffff;
     }
     .nav-side-menu .brand {
-    background-color: #23282e;
-    line-height: 50px;
-    display: block;
-    text-align: center;
-    font-size: 14px;
+        background-color: #23282e;
+        line-height: 50px;
+        display: block;
+        text-align: center;
+        font-size: 14px;
     }
     .nav-side-menu .toggle-btn {
-    display: none;
+        display: none;
     }
     .nav-side-menu ul,
     .nav-side-menu li {
@@ -97,26 +73,26 @@
         cursor: pointer;
     }
     .nav-side-menu li {
-    padding-left: 0px;
-    border-left: 3px solid #2e353d;
-    border-bottom: 1px solid #23282e;
+        padding-left: 0px;
+        border-left: 3px solid #2e353d;
+        border-bottom: 1px solid #23282e;
     }
     .nav-side-menu li a {
-    text-decoration: none;
-    color: #e1ffff;
+        text-decoration: none;
+        color: #e1ffff;
     }
     .nav-side-menu li:hover {
-    border-left: 3px solid #d19b3d;
-    background-color: #4f5b69;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+        border-left: 3px solid #d19b3d;
+        background-color: #4f5b69;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
     }
     @media (min-width: 767px) {
-    .nav-side-menu .menu-list .menu-content {
-    display: block;
+        .nav-side-menu .menu-list .menu-content {
+            display: block;
+        }
     }
-    }
-    </style>
+</style>

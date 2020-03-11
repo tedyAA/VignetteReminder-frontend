@@ -92,7 +92,7 @@
                                 <i class="fa fa-repeat"></i>
                             </div>
                             <input type="password" name="password-confirmation" class="form-control"
-                                   id="password-confirm" placeholder="Password" required>
+                                   id="password-confirm" placeholder="Confirm Password" required>
                         </div>
                     </div>
                 </div>

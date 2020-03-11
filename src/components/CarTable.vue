@@ -1,61 +1,33 @@
 <template>
-    <div id="chartpanel" class="row" data-equalizer>
+    <div class="container">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <tytle class="mr-5">Type</tytle>
+        <tytle class="mr-5">Start Date</tytle>
+        <tytle class="mr-5">End Date </tytle>
+        <tytle class="mr-5">Note</tytle>
+     <div v-for="(invoice, index) in invoice" :key="index">
 
-        <div class="column small-12 left_panel" >
-            <header data-equalizer-watch>
-                <i class="fa fa-bars menu_top_icon" aria-hidden="true"></i>
-                <div class="right_nav">
-                    <i class="fa fa-heart" aria-hidden="true"></i>
-                    <i class="fa fa-link" aria-hidden="true"></i>
-                    <i class="fa fa-user-circle" aria-hidden="true"></i>
-                </div>
-                <charttitle> </charttitle>
-            </header>
+                <input class="col-sm-2" type="text" id=type v-model="invoice.Type" />
 
+                <input class="col-sm-2" type="text" id=sDate v-model="invoice.SDate" />
 
-            <div id="chart_table">
-                <form id="chart_datas"  >
-                    <div class="grid-container">
-                        <div class="grid-x grid-padding-x input_wrp">
-                            <div class="small-1 cell column">
-                                <label>
-                                    <input type="text" placeholder="id">
-                                </label>
-                            </div>
-                            <div class="small-2 cell column">
-                                <label>
-                                    <input type="text" placeholder="value" v-model="value" id="value" name="value">
-                                </label>
-                            </div>
-                            <div class="small-6 cell column">
-                                <label>
-                                    <input type="text" placeholder="Label" v-model="label" id="label" name="label">
-                                </label>
-                            </div>
-                            <div class="small-3 cell column">
-                                <label>
-                                    <input type="text" placeholder="Icon" v-model="icon" id="icon" name="icon">
-                                </label>
-                            </div>
-                        </div>
+                <input class="col-sm-2" type="text" id= eDate v-model="invoice.EDate" />
 
-                        <div class="addRowBtn" v-on:click.prevent="addRow" value=""><i class="fa fa-plus" aria-hidden="true"></i></div>
-                    </div>
+                <input class="col-sm-2" type="text" id=note v-model="invoice.Note" />
 
-                </form>
-
-                <charttable v-bind:proplabels="labels"> </charttable>
-            </div>
-        </div> <!-- end left panel -->
-        <!--<div class="column small-12 medium-4 right_panel">
-          <header data-equalizer-watch>
-      <chartsubtitle> </chartsubtitle>
-          </header>
-        </div> -->
+                <i class="far fa-trash-alt col-sm-2" @click="deleteRow(index)"></i>
+     </div>
+        <button type='button' cass="btn btn-info" @click="addNewRow">
+            <i class="btn"></i>
+            Add
+        </button>
+        <tytle class="mr-5"></tytle>
     </div>
-</template>
 
+</template>
 <script>
+
     export default {
         name: "CarTable",
         data() {
@@ -82,14 +54,19 @@
                     EDate: '',
                     Note: '',
                 });
-                // addToData({
-                //
-                // });
+                let inputs = document.getElementsByTagName("input");
+                console.log(inputs.length/4)
+                for (let i = 0; i < inputs.length/4; i++) {
+
+                document.getElementById("type").disabled = true;
+                document.getElementById("sDate").disabled = true;
+                document.getElementById("eDate").disabled = true;
+                document.getElementById("note").disabled = true;
+                }
             }
         }
     }
 </script>
-
 <style scoped>
     .container{
         margin-left: 400px;
@@ -102,5 +79,6 @@
         text-decoration: none;
         font-size: 28px;
         font-family: "Amiri Quran";
-    }
+    }.btn btn-info{
+     }
 </style>

@@ -6,7 +6,7 @@
                     <img src="http://www.cabkc.in/resource/Image/img-mail-contact.jpg" height="100px;" width="100px;"
                          class="center-block img-responsive img-rounded img-circle img-thumbnail">
                     <div class="well-header">
-                        <h1 class="text-center"><strong> Contact Form </strong></h1>
+                        <h1 class="text-center"><strong> Contact Us </strong></h1>
                         <hr/>
                     </div>
 
@@ -74,6 +74,7 @@
         padding-left: 30px;
         margin: 3% auto;
         width: 450px;
+        height:500px;
         box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
         background-color: rgba(0, 158, 223, 0.8);
         border-radius: 40px;
