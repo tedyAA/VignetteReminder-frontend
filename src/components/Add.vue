@@ -5,22 +5,28 @@
                 <form id=" AddCarForm">
                     <h5>Enter car info.</h5>
                     <form class="" method="post" action="#">
-                        <div class="form-group">
+                        <div class="form-group" :class="{ 'form-group--error': $v.carN.$error }">
                             <label for="carN" class="cols-sm-2 control-label">Enter Your Car Registration Number</label>
                             <div class="input">
-                                <input v-model="message" class="form-control" placeholder="Enter car №" name="carN">
+                                <input class="form-control" placeholder="Enter car №" name="carN"
+                                       v-model.trim="$v.carN.$model">
+                                <div class="error" v-if="!$v.carN.required">Field is required</div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" :class="{ 'form-group--error': $v.VIN.$error }">
                             <label for="VIN" class="cols-sm-2 ">Enter Car VIN</label>
                             <div class="input">
-                                <input v-model="message1" class="form-control" placeholder="Enter VIN number" name="VIN">
+                                <input class="form-control" placeholder="Enter VIN number" name="VIN"
+                                       v-model.trim="$v.VIN.$model">
+                                <div class="error" v-if="!$v.VIN.required">Field is required</div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" :class="{ 'form-group--error': $v.VIN.$error }">
                             <label for="sticker" class="cols-sm-2 control-label">Enter Car Sticker Number</label>
                             <div class="input">
-                                <input v-model="message2" class="form-control" placeholder="Enter sticker N" name="Sticker">
+                                <input  class="form-control" placeholder="Enter sticker N" name="Sticker"
+                                       v-model.trim="$v.VIN.$model">
+                                <div class="error" v-if="!$v.VIN.required">Field is required</div>
                             </div>
                         </div>
                     </form>
@@ -34,33 +40,34 @@
 </template>
 
 <script>
+    import Vue from 'vue'
+    import Vuelidate from 'vuelidate'
+
+    Vue.use(Vuelidate)
+
+    import {required} from 'vuelidate/lib/validators'
     export default {
         name: "Add",
-        // data() {
-        //     return {
-        //         message:'',
-        //         message1:'',
-        //         message2:'',
-        //         vehicle: [],
-        //         vehicle1: [],
-        //         vehicle2: []
-        // }
-        // },
-        // methods: {
-        //     get() {
-        //
-        //         this.vehicle.push(this.message);
-        //         this.vehicle1.push(this.message1);
-        //         this.vehicle2.push(this.message2);
-        //         localStorage.setItem('vehicle', 'vehicle1');
-        //         // document.writeln(this.vehicle)
-        //         // document.writeln(this.vehicle1)
-        //         // document.writeln(this.vehicle2)
-        //         this.message='';
-        //         this.message1='';
-        //         this.message2='';
-        //     }
-        // }
+        data() {
+            return {
+                carN: '',
+                VIN: '',
+                sticker: '',
+
+            }
+        },
+        validations: {
+           carN: {
+                required
+            },
+            VIN: {
+                required
+            },
+            sticker: {
+                required
+            },
+
+        }
     }
 </script>
 

@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <HelloWorld/>
-<!--    <MainNavBar/>-->
     <router-view/>
   </div>
 </template>
@@ -20,6 +19,9 @@
       return {
         msg: 'Welcome!'
       }
+    },
+    created() {
+      this.$store.dispatch('auth/tryAutoLogin');
     }
   }
 </script>

@@ -1,45 +1,73 @@
 <template>
     <form>
-    <div class="login-wrap">
-        <div class="login-html">
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign
-            In</label>
-            <input id="tab-2" type="radio" name="tab" class="for-pwd">
-<!--            <label for="tab-2" class="tab">Forgot Password</label>-->
-            <div class="login-form">
-                <div class="sign-in-htm">
-                    <div class="group">
-                        <label for="user" class="label">Username or Email</label>
-                        <input id="user1" type="text" class="input">
+        <div class="login-wrap">
+            <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign
+                In</label>
+                <input id="tab-2" type="radio" name="tab" class="for-pwd">
+                <!--            <label for="tab-2" class="tab">Forgot Password</label>-->
+                <div class="login-form">
+                    <div class="sign-in-htm">
+                        <div class="group" :class="{ 'form-group--error': $v.name.$error }">
+                            <label for="user" class="label">Username or Email</label>
+                            <input id="user1" type="text" class="input" v-model.trim="$v.name.$model"
+                                   v-bind:class="[isActive ? activeClass : '', errorClass]">
+                            <div class="error" v-if="!$v.name.required" >Field is required</div>
+                        </div>
+                        <div class="group" :class="{ 'form-group--error': $v.age.$error}">
+                            <label for="pass" class="label">Password</label>
+                            <input id="pass" type="password" class="input" data-type="password"
+                                   v-model.trim="$v.age.$model">
+                            <div class="error" v-if="!$v.age.required">Field is required</div>
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button" value="Sign In" id="btn" >
+                        </div>
                     </div>
-                    <div class="group">
-                        <label for="pass" class="label">Password</label>
-                        <input id="pass" type="password" class="input" data-type="password">
+                    <div class="for-pwd-htm">
+
+                        <div class="hr"></div>
                     </div>
-                    <div class="group">
-                        <input type="submit" class="button" value="Sign In">
-                    </div>
-<!--                    <div class="hr"></div>-->
-                </div>
-                <div class="for-pwd-htm">
-<!--                    <div class="group">-->
-<!--                        <label for="user" class="label">Username or Email</label>-->
-<!--                        <input id="user" type="text" class="input">-->
-<!--                    </div>-->
-<!--                    <div class="group">-->
-<!--                        <input type="submit" class="button" value="Reset Password">-->
-<!--                    </div>-->
-                    <div class="hr"></div>
                 </div>
             </div>
         </div>
-    </div>
     </form>
 </template>
 
 <script>
+    import Vue from 'vue'
+    import Vuelidate from 'vuelidate'
+
+    Vue.use(Vuelidate)
+
+    import {required} from 'vuelidate/lib/validators'
+
+
     export default {
-        name: "LogIn"
+        data() {
+            return {
+                name: '',
+                age: ''
+            }
+        },
+        validations: {
+            name: {
+                required
+            },
+            age: {
+                required
+            }
+        },
+        methods() {
+        //     dis()
+        //     {
+        //         if (this.age.required) {
+        //         document.getElementById("btn").disabled = false;
+        //         }else{
+        //             document.getElementById("btn").disabled = true;
+        //         }
+        //     }
+        }
     }
 </script>
 
@@ -66,22 +94,6 @@
         position: absolute;
         padding: 80px 70px 50px 70px;
     }
-
-    /*.login-html .sign-in-htm,*/
-    /*.login-html .for-pwd-htm {*/
-    /*    top: 0;*/
-    /*    left: 0;*/
-    /*    right: 0;*/
-    /*    bottom: 0;*/
-    /*    position: absolute;*/
-    /*    -webkit-transform: rotateY(180deg);*/
-    /*    transform: rotateY(180deg);*/
-    /*    -webkit-backface-visibility: hidden;*/
-    /*    backface-visibility: hidden;*/
-    /*    -webkit-transition: all .4s linear;*/
-    /*    transition: all .4s linear;*/
-
-    /*}*/
 
     .login-html .sign-in,
     .login-html .for-pwd,
