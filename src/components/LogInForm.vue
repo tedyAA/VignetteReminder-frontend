@@ -10,14 +10,13 @@
                     <div class="sign-in-htm">
                         <div class="group" :class="{ 'form-group--error': $v.name.$error }">
                             <label for="user" class="label">Username or Email</label>
-                            <input id="user1" type="text" class="input" v-model.trim="$v.name.$model"
-                                   v-bind:class="[isActive ? activeClass : '', errorClass]">
+                            <input id="user1" type="text" class="input" v-model.trim="$v.name.$model" v-model="email">
                             <div class="error" v-if="!$v.name.required" >Field is required</div>
                         </div>
                         <div class="group" :class="{ 'form-group--error': $v.age.$error}">
                             <label for="pass" class="label">Password</label>
                             <input id="pass" type="password" class="input" data-type="password"
-                                   v-model.trim="$v.age.$model">
+                                   v-model.trim="$v.age.$model" v-model="password">
                             <div class="error" v-if="!$v.age.required">Field is required</div>
                         </div>
                         <div class="group">
@@ -47,7 +46,10 @@
         data() {
             return {
                 name: '',
-                age: ''
+                age: '',
+
+                email: '',
+                password: ''
             }
         },
         validations: {
@@ -58,15 +60,15 @@
                 required
             }
         },
-        methods() {
-        //     dis()
-        //     {
-        //         if (this.age.required) {
-        //         document.getElementById("btn").disabled = false;
-        //         }else{
-        //             document.getElementById("btn").disabled = true;
-        //         }
-        //     }
+        methods: {
+            onSubmit () {
+                const formData = {
+                    email: this.email,
+                    password: this.password
+                }
+                console.log(formData)
+                this.$store.dispatch('auth/login', formData);
+            }
         }
     }
 </script>

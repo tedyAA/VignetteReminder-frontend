@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <form class="form-horizontal" role="form" method="POST" action="/register">
+        <form class="form-horizontal" @submit.prevent="onSubmit">
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">

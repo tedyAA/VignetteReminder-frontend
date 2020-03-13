@@ -3,9 +3,7 @@
         <ul>
             <li><a class="active" >Home</a></li>
             <slot></slot>
-
         </ul>
-
     </div>
 </template>
 

@@ -2,30 +2,42 @@
     <div class="container">
         <div class="main">
             <div class="main-center">
-                <form id=" AddCarForm">
+                <form id=" AddCarForm" @submit.prevent="onSubmit">
                     <h5>Enter car info.</h5>
                     <form class="" method="post" action="#">
                         <div class="form-group" :class="{ 'form-group--error': $v.carN.$error }">
-                            <label for="carN" class="cols-sm-2 control-label">Enter Your Car Registration Number</label>
+                            <label for="carName" class="cols-sm-2 control-label">Enter Your Car Name</label>
                             <div class="input">
                                 <input class="form-control" placeholder="Enter car №" name="carN"
-                                       v-model.trim="$v.carN.$model">
+                                       v-model.trim="$v.carN.$model"
+                                       v-model="name">
+                                <div class="error" v-if="!$v.carN.required">Field is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group" :class="{ 'form-group--error': $v.carN.$error }">
+                            <label for="carN" class="cols-sm-2 control-label">Enter Your Car Registration Number</label>
+                            <div class="input">
+                                <input class="form-control" placeholder="Enter car №" name="carN" id="vehicle_reg_no"
+                                       v-model.trim="$v.carN.$model"
+                                       v-model="vehicle_reg_no">
                                 <div class="error" v-if="!$v.carN.required">Field is required</div>
                             </div>
                         </div>
                         <div class="form-group" :class="{ 'form-group--error': $v.VIN.$error }">
                             <label for="VIN" class="cols-sm-2 ">Enter Car VIN</label>
                             <div class="input">
-                                <input class="form-control" placeholder="Enter VIN number" name="VIN"
-                                       v-model.trim="$v.VIN.$model">
+                                <input class="form-control" placeholder="Enter VIN number" name="VIN" id="frame"
+                                       v-model.trim="$v.VIN.$model"
+                                       v-model="frame_no">
                                 <div class="error" v-if="!$v.VIN.required">Field is required</div>
                             </div>
                         </div>
                         <div class="form-group" :class="{ 'form-group--error': $v.VIN.$error }">
                             <label for="sticker" class="cols-sm-2 control-label">Enter Car Sticker Number</label>
                             <div class="input">
-                                <input  class="form-control" placeholder="Enter sticker N" name="Sticker"
-                                       v-model.trim="$v.VIN.$model">
+                                <input  class="form-control" placeholder="Enter sticker N" name="Sticker" id="sticker"
+                                       v-model.trim="$v.VIN.$model"
+                                        v-model="sticker_no">
                                 <div class="error" v-if="!$v.VIN.required">Field is required</div>
                             </div>
                         </div>
@@ -54,6 +66,11 @@
                 VIN: '',
                 sticker: '',
 
+                name: '',
+                vehicle_reg_no: '',
+                frame_no: '',
+                sticker_no: ''
+
             }
         },
         validations: {
@@ -67,6 +84,24 @@
                 required
             },
 
+        },
+        methods: {
+            onSubmit() {
+                const formData = {
+                    name: this.name,
+                    vehicle_reg_no: this.vehicle_reg_no,
+                    // frame_no: this.frame_no,
+                    // sticker_no: this.sticker_no
+                }
+                if (this.frame_no) {
+                    formData.frame_no = this.frame_no;
+                }
+                if (this.sticker_no) {
+                    formData.sticker_no = this.sticker_no;
+                }
+                console.log(formData);
+                this.$store.dispatch('vehicles/addVehicle', formData);
+            }
         }
     }
 </script>
