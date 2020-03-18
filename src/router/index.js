@@ -9,6 +9,8 @@ import AddCar from "../views/AddCar";
 import Contacts from "../views/Contacts";
 import UserProfile from "../views/UserProfile";
 import CarInfo from "../views/CarInfo";
+import Reminders from "../components/Reminders";
+
 
 Vue.use(VueRouter)
 
@@ -59,8 +61,14 @@ const routes = [
     component: CarInfo
   },
   {
+    path: '/reminders',
+    name: 'reminders',
+    component: Reminders
+  },
+  {
     path:'*', redirect:'/main'
-  }
+  },
+
 ]
 
 const router = new VueRouter({

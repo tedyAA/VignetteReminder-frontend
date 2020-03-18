@@ -12,17 +12,21 @@
                 <div class="col-md-3 field-label-responsive">
                     <label for="name">Name</label>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group" >
-                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                <div class="col-md-6 ">
+                    <div class="form-group" :class="{ 'form-group--error': $v.fName.$error }" >
+                        <div class="input-group mb-2 mr-sm-2 ">
                             <div class="input-group-addon" style="width: 2.6rem "><i class="fa fa-user"></i></div>
                             <input type="text" name="name" class="form-control" id="name" v-model="first_name"
-                                   placeholder="John" required autofocus>
+                                   v-model.trim="$v.fName.$model"
+                                   placeholder="John" >
+                            <br />
+                            <div class="error" v-if="!$v.fName.required">Field is required</div>
                         </div>
                     </div>
                 </div>
                 <p>.</p>
-                <div class="col-md-3 field-label-responsive">
+                <br />
+                <div class="col-md-3 field-label-responsive" :class="{ 'form-group--error': $v.lName.$error }" >
                     <label for="name">Last Name</label>
                 </div>
                 <div class="col-md-6">
@@ -30,8 +34,10 @@
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
                             <input type="text" name="name" class="form-control" id="Lname" v-model="last_name"
+                                   v-model.trim="$v.lName.$model"
                                    placeholder="Doe" required autofocus>
                         </div>
+                        <div class="error" v-if="!$v.lName.required">Field is required</div>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -43,7 +49,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 field-label-responsive">
+                <div class="col-md-3 field-label-responsive" :class="{ 'form-group--error': $v.eMail.$error }" >
                     <label for="email">E-Mail Address</label>
                 </div>
                 <div class="col-md-6">
@@ -51,8 +57,10 @@
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
                             <input type="text" name="email" class="form-control" id="email" v-model="email"
+                                   v-model.trim="$v.eMail.$model"
                                    placeholder="you@example.com" required autofocus>
                         </div>
+                        <div class="error" v-if="!$v.eMail.required">Field is required</div>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -64,7 +72,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 field-label-responsive">
+                <div class="col-md-3 field-label-responsive" :class="{ 'form-group--error': $v.pass.$error }" >
                     <label for="password">Password</label>
                 </div>
                 <div class="col-md-6">
@@ -72,9 +80,11 @@
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
                             <input type="password" name="password" class="form-control" id="password" v-model="password"
+                                   v-model.trim="$v.pass.$model"
                                    placeholder="Password" required>
                         </div>
                     </div>
+
                 </div>
                 <div class="col-md-3">
                     <div class="form-control-feedback">
@@ -82,7 +92,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 field-label-responsive">
+                <div class="col-md-3 field-label-responsive" :class="{ 'form-group--error': $v.conPassword.$error }" >
                     <label for="password">Confirm Password</label>
                 </div>
                 <div class="col-md-6">
@@ -92,10 +102,12 @@
                                 <i class="fa fa-repeat"></i>
                             </div>
                             <input type="password" name="password-confirmation" class="form-control"
+                                   v-model.trim="conPassword.$model"
                                    v-model="password_confirmation"
                                    id="password-confirm" placeholder="Confirm Password" required>
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="row">
@@ -114,7 +126,7 @@
 
     Vue.use(Vuelidate)
 
-    import {required} from 'vuelidate/lib/validators'
+    import {required,sameAs,email} from 'vuelidate/lib/validators'
 
     export default {
         data() {
@@ -125,12 +137,14 @@
                 pass: '',
                 conPassword: '',
 
+
                 first_name: '',
                 last_name: '',
                 email: '',
                 password: '',
                 password_confirmation: ''
             }
+
         },
         validations: {
             fName: {
@@ -140,13 +154,16 @@
                 required
             },
             eMail: {
-                required
+                required,
+                email
             },
             pass: {
-                required
+                required,
+
             },
             conPassword: {
-                required
+                required,
+                sameAsPassword: sameAs('pass')
             }
         }, methods: {
             onSubmit() {
@@ -175,8 +192,7 @@
         }
 
         .container {
-            width: 900px;
-            height: 420px;
+
             margin-top: 50px;
             border-radius: 30px;
             box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);

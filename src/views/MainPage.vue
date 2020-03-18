@@ -41,12 +41,5 @@
     }
 </script>
 <style scoped>
-    body {
-        background-image: url("ay.jpg");
-        background-repeat: no-repeat;
 
-    }
-    .nav {
-        /*margin-left: 150px;*/
-    }
 </style>

@@ -11,16 +11,16 @@
                         <div class="group" :class="{ 'form-group--error': $v.name.$error }">
                             <label for="user" class="label">Username or Email</label>
                             <input id="user1" type="text" class="input" v-model.trim="$v.name.$model" v-model="email">
-                            <div class="error" v-if="!$v.name.required" >Field is required</div>
+                            <div class="error" v-if="!$v.name.required">Field is required</div>
                         </div>
-                        <div class="group" :class="{ 'form-group--error': $v.age.$error}">
+                        <div class="group" :class="{ 'form-group--error': $v.pass.$error}">
                             <label for="pass" class="label">Password</label>
                             <input id="pass" type="password" class="input" data-type="password"
-                                   v-model.trim="$v.age.$model" v-model="password">
-                            <div class="error" v-if="!$v.age.required">Field is required</div>
+                                   v-model.trim="$v.pass.$model" v-model="password">
+                            <div class="error" v-if="!$v.pass.required">Field is required</div>
                         </div>
                         <div class="group">
-                            <input type="submit" class="button" value="Sign In" id="btn" >
+                            <input type="submit" class="button" value="Sign In" id="btn">
                         </div>
                     </div>
                     <div class="for-pwd-htm">
@@ -34,19 +34,12 @@
 </template>
 
 <script>
-    import Vue from 'vue'
-    import Vuelidate from 'vuelidate'
-
-    Vue.use(Vuelidate)
-
     import {required} from 'vuelidate/lib/validators'
-
-
     export default {
         data() {
             return {
                 name: '',
-                age: '',
+                pass: '',
 
                 email: '',
                 password: ''
@@ -56,12 +49,12 @@
             name: {
                 required
             },
-            age: {
+            pass: {
                 required
             }
         },
         methods: {
-            onSubmit () {
+            onSubmit() {
                 const formData = {
                     email: this.email,
                     password: this.password
@@ -237,6 +230,11 @@
         height: 2px;
         margin: 60px 0 50px 0;
         background: rgba(255, 255, 255, .2);
+    }
+
+    .error, .input{
+        color: red;
+        boreder:red;
     }
 
 </style>

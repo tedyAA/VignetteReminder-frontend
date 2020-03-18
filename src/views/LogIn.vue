@@ -36,12 +36,5 @@
 
 </script>
 <style scoped>
-    .login {
-
-        background-image: url("ay.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-
-    }
 
 </style>

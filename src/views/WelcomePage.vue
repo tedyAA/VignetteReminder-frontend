@@ -49,11 +49,6 @@
 
 <style>
 
-    body {
-        background-image: url("ay.jpg");
-        /*background-repeat: no-repeat;*/
-        /*background-size: cover;*/
-    }
 
     .move1 {
         background: #00CED1;

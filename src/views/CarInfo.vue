@@ -8,14 +8,14 @@
                     <li><a @click="profile">Profile</a></li>
                     <li><a @click="logOut">Log out</a></li>
                 </upper-nav-bar>
-                <car-info-form></car-info-form>
+                <car-table></car-table>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import CarInfoForm from "../components/CarInfoForm";
+  import CarTable from "../components/CarTable";
     import UpperNavBar from "../components/UpperNavBar";
     import MainNavBar from "../components/MainNavBar";
 
@@ -34,7 +34,7 @@
 
         },
         components: {
-            CarInfoForm,
+            CarTable,
             UpperNavBar,
             MainNavBar
         }

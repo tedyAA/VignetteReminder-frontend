@@ -6,19 +6,19 @@
 
             <div class="menu-list">
 
-                <ul id="menu-content" class="menu-content collapse out">
+                <ul id="menu-content" class="menu-content collapse out" >
                     <li>
-                        <a href="#">
+                        <a @click="dashboard">
                             <i @click="dashboard"></i> Dashboard
                         </a>
                     </li>
 
                     <li data-toggle="collapse" data-target="#new" class="collapsed">
-                        <a href="#"><i class="fa fa-car fa-lg"></i> New </a>
+                        <a @click="add"><i class="fa fa-car fa-lg"></i> New </a>
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a @click="profile">
                             <i class="fa fa-user fa-lg"></i> Profile
                         </a>
                     </li>
@@ -33,12 +33,16 @@
 <script>
     export default {
         name: "MainNavBar",
-        methods:{
-            newCar(){
+        methods: {
+
+           add() {
                 this.$router.push('/add')
             },
-            dashboard(){
+            dashboard() {
                 this.$router.push('/main')
+            },
+            profile() {
+                this.$router.push('/profile')
             }
         }
     }

@@ -1,83 +1,125 @@
 <template>
-    <div class="container">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <tytle class="mr-5">Type</tytle>
-        <tytle class="mr-5">Start Date</tytle>
-        <tytle class="mr-5">End Date </tytle>
-        <tytle class="mr-5">Note</tytle>
-     <div v-for="(invoice, index) in invoice" :key="index">
+    <div>
+        <div class="container">
+            <h1>Details and reminders for vehicle with the id of .</h1>
+            <h1>Sorry, we couldn't find a vehicle with the id of in your collection.</h1>
+            <form>
+                <div class="form-group">
+                    <label for="vehicleName">Vehicle Name</label>
+                    <input type="text" class="form-control" id="vehicleName">
+                </div>
+                <div class="form-group">
+                    <label for="vehicleRegNo">Vehicle Registration Number</label>
+                    <input type="text" class="form-control" id="vehicleRegNo">
+                </div>
+                <div class="form-group">
+                    <label for="vehicleFrameNo">Vehicle Frame Number</label>
+                    <input type="text" class="form-control" id="vehicleFrameNo">
+                </div>
+                <div class="form-group">
+                    <label for="vehicleStickerNo">Vehicle Sticker Number</label>
+                    <input type="text" class="form-control" id="vehicleStickerNo">
+                </div>
+                <button class="btn btn-success mt-2">Save Vehicle Details</button>
+                <button class="btn btn-primary mt-2">Edit Vehicle Details</button>
+            </form>
+        </div>
+        <div class="containerB">
+            <form>
+                <div class="form-group">
+                    <label for="reminderTitle">Reminder Title</label>
+                    <input type="text" class="form-control" id="reminderTitle">
+                </div>
+                <div class="form-group">
+                    <label for="changedOn">Changed On</label>
+                    <input type="text" class="form-control" id="changedOn">
+                </div>
+                <div class="form-group">
+                    <label for="dueChangeDate">Due Change Date</label>
+                    <input type="text" class="form-control" id="dueChangeDate">
+                </div>
+                <div class="form-group">
+                    <label for="note">Note</label>
+                    <input type="text" class="form-control" id="note">
+                </div>
+                <button class="btn btn-primary mt-2">Save Reminder</button>
+                <button class="btn btn-success mt-2">Edit Reminder</button>
+                <!--                <button v-else class="btn btn-primary mt-2" @click="editDetails()">Edit Vehicle Details</button>-->
+            </form>
+        </div>
+        <div class="containerC">
 
-                <input class="col-sm-2" type="text" id=type v-model="invoice.Type" />
-
-                <input class="col-sm-2" type="text" id=sDate v-model="invoice.SDate" />
-
-                <input class="col-sm-2" type="text" id= eDate v-model="invoice.EDate" />
-
-                <input class="col-sm-2" type="text" id=note v-model="invoice.Note" />
-
-                <i class="far fa-trash-alt col-sm-2" @click="deleteRow(index)"></i>
-     </div>
-        <button type='button' cass="btn btn-info" @click="addNewRow">
-            <i class="btn"></i>
-            Add
-        </button>
-        <tytle class="mr-5"></tytle>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Reminder Title</th>
+                    <th scope="col">Changed On</th>
+                    <th scope="col">Due Change Date</th>
+                    <th scope="col">Note</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="(reminder, index) in reminders" :key="reminder.id">
+                    <th scope="row">{{index + 1}}</th>
+                    <td>{{reminder.title}}</td>
+                    <td>{{reminder.changed_on}}</td>
+                    <td>{{reminder.due_change_date}}</td>
+                    <td>{{reminder.note}}</td>
+                    <td>
+                        <button class="btn btn-success">Edit Reminder</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger">Delete Reminder</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-
 </template>
 <script>
 
     export default {
-        name: "CarTable",
+        name: "Reminders",
+
         data() {
             return {
-                invoice: [{
-                    Type: '',
-                    SDate: '',
-                    EDate: '',
-                    Note: '',
-                }]
-            }
-        },
-        methods: {
-            saveInvoice() {
-                // console.log(JSON.stringify(this.invoice));
-            },
-            deleteRow(index) {
-                this.invoice.splice(index,1)
-            },
-            addNewRow() {
-                this.invoice.push({
-                    Type: '',
-                    SDate: '',
-                    EDate: '',
-                    Note: '',
-                });
-                let inputs = document.getElementsByTagName("input");
-                console.log(inputs.length/4)
-                for (let i = 0; i < inputs.length/4; i++) {
-
-                document.getElementById("type").disabled = true;
-                document.getElementById("sDate").disabled = true;
-                document.getElementById("eDate").disabled = true;
-                document.getElementById("note").disabled = true;
-                }
+                id: '1',
+                title: 'sd',
+                changed_on: '12.12.20',
+                due_change_date: '12.12.21',
+                note: 'rrrtttt',
+                index: 'dd'
             }
         }
     }
 </script>
 <style scoped>
-    .container{
-        margin-top: 30px;
-        width: 650px;
+    .container {
+        margin-top: 50px;
+        border-radius: 30px;
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+        background-color: rgba(0, 158, 223, 0.8);
     }
-    .mr-5{
-        color: black;
-        text-align: center;
-        text-decoration: none;
-        font-size: 28px;
-        font-family: "Amiri Quran";
-    }.btn btn-info{
-     }
+
+    .containerB {
+        margin-top: 50px;
+        border-radius: 30px;
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+        background-color: rgba(0, 158, 223, 0.8);
+        width: 1150px;
+        margin-left: 150px;
+    }
+
+    .containerC {
+        margin-top: 50px;
+        border-radius: 30px;
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+        background-color: rgba(0, 158, 223, 0.8);
+        width: 1150px;
+        margin-left: 150px;
+    }
 </style>

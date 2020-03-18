@@ -1,6 +1,6 @@
 <template>
     <div>
-        <upper-main-nav-bar/>
+        <upper-nav-bar/>
         <div class="container">
             <h1 v-if="vehicle">Details and reminders for vehicle with the id of {{this.$route.params.id}}.</h1>
             <h1 v-else>Sorry, we couldn't find a vehicle with the id of {{this.$route.params.id}} in your collection.</h1>
@@ -80,10 +80,10 @@
     </div>
 </template>
 <script>
-    import UpperMainNavBar from "./UpperMainNavBar";
+    import UpperNavBar from "./UpperNavBar";
     export default {
         name: "Reminders",
-        components: {UpperMainNavBar},
+        components: {UpperNavBar},
         data() {
             return {
                 // vehicleName: this.vehicle.name,

@@ -5,13 +5,13 @@
                 <form id=" AddCarForm" @submit.prevent="onSubmit">
                     <h5>Enter car info.</h5>
                     <form class="" method="post" action="#">
-                        <div class="form-group" :class="{ 'form-group--error': $v.carN.$error }">
+                        <div class="form-group" :class="{ 'form-group--error': $v.carName.$error }">
                             <label for="carName" class="cols-sm-2 control-label">Enter Your Car Name</label>
                             <div class="input">
-                                <input class="form-control" placeholder="Enter car №" name="carN"
-                                       v-model.trim="$v.carN.$model"
+                                <input class="form-control" placeholder="Enter car Name" name="carN"
+                                       v-model.trim="$v.carName.$model"
                                        v-model="name">
-                                <div class="error" v-if="!$v.carN.required">Field is required</div>
+                                <div class="error" v-if="!$v.carName.required">Field is required</div>
                             </div>
                         </div>
                         <div class="form-group" :class="{ 'form-group--error': $v.carN.$error }">
@@ -23,28 +23,24 @@
                                 <div class="error" v-if="!$v.carN.required">Field is required</div>
                             </div>
                         </div>
-                        <div class="form-group" :class="{ 'form-group--error': $v.VIN.$error }">
+                        <div class="form-group">
                             <label for="VIN" class="cols-sm-2 ">Enter Car VIN</label>
                             <div class="input">
                                 <input class="form-control" placeholder="Enter VIN number" name="VIN" id="frame"
-                                       v-model.trim="$v.VIN.$model"
                                        v-model="frame_no">
-                                <div class="error" v-if="!$v.VIN.required">Field is required</div>
                             </div>
                         </div>
-                        <div class="form-group" :class="{ 'form-group--error': $v.VIN.$error }">
+                        <div class="form-group">
                             <label for="sticker" class="cols-sm-2 control-label">Enter Car Sticker Number</label>
                             <div class="input">
-                                <input  class="form-control" placeholder="Enter sticker N" name="Sticker" id="sticker"
-                                       v-model.trim="$v.VIN.$model"
-                                        v-model="sticker_no">
-                                <div class="error" v-if="!$v.VIN.required">Field is required</div>
+                                <input class="form-control" placeholder="Enter sticker N" name="Sticker" id="sticker"
+                                       v-model="sticker_no">
                             </div>
                         </div>
                     </form>
                 </form>
                 <div class="group">
-                    <button class="button" @click="get">Send</button>
+                    <button class="button" type="submit">Add</button>
                 </div>
             </div>
         </div>
@@ -58,10 +54,12 @@
     Vue.use(Vuelidate)
 
     import {required} from 'vuelidate/lib/validators'
+
     export default {
         name: "Add",
         data() {
             return {
+                carName:'',
                 carN: '',
                 VIN: '',
                 sticker: '',
@@ -74,7 +72,10 @@
             }
         },
         validations: {
-           carN: {
+            carName: {
+                required
+            },
+            carN: {
                 required
             },
             VIN: {
@@ -127,8 +128,9 @@
         text-shadow: none;
         -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
         -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
-        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
         border-radius: 30px;
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+        background-color: rgba(0, 158, 223, 0.8);
 
 
     }
@@ -136,11 +138,6 @@
     span.input-group-addon i {
         color: #009edf;
         font-size: 17px;
-    }
-
-    .button {
-        border-radius: 30px;
-        margin-left: 75px;
     }
 
     .form-control {
@@ -151,19 +148,25 @@
         width: 100%;
         color: #fff;
         display: block;
+
     }
 
     .button {
         text-transform: uppercase;
         border-radius: 50px;
         width: 50%;
-        color: #2c3e50;
         display: block;
         border: none;
         padding: 15px 20px;
-        border-radius: 25px;
-        background: rgba(17, 97, 238, 0.34);
+        background: rgba(175, 218, 235, 0.34);
+        background: #1161ee;
         position: center;
+        margin-left: 75px;
+    }
+
+    .error {
+        color: red;
+        boreder: red;
     }
 
 </style>

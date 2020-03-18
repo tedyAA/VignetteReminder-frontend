@@ -7,6 +7,7 @@
 
 <script>
   import HelloWorld from './components/HelloWorld.vue'
+
   // import MainNavBar from './components/MainNavBar.vue'
   export default {
     name: 'app',
@@ -32,15 +33,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    /*color: #2c3e50;*/
-    /*margin-top: 60px;*/
+
+
+    background-image: url("./views/ay.jpg");
+    background-repeat: repeat;
+    background-size: 100% 100%;
     height: 100vh;
-    background: repeat;
+    margin: 0px auto 0;
+    position: relative;
   }
-  /*body {*/
 
-  /*  background: linear-gradient(white, cadetblue) 500px;*/
-
-  /*}*/
 
 </style>
