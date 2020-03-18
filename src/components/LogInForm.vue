@@ -8,10 +8,11 @@
                 <!--            <label for="tab-2" class="tab">Forgot Password</label>-->
                 <div class="login-form">
                     <div class="sign-in-htm">
-                        <div class="group" :class="{ 'form-group--error': $v.name.$error }">
+                        <div class="group" :class="{ 'valid': !$v.name.$invalid,'invalid': $v.name.$error }">
                             <label for="user" class="label">Username or Email</label>
                             <input id="user1" type="text" class="input" v-model.trim="$v.name.$model" v-model="email">
-                            <div class="error" v-if="!$v.name.required">Field is required</div>
+                            <div class="invalid" v-if="!$v.name.required">Field is required</div>
+                            <div class="valid" v-if="$v.name.required">corect</div>
                         </div>
                         <div class="group" :class="{ 'form-group--error': $v.pass.$error}">
                             <label for="pass" class="label">Password</label>
@@ -34,7 +35,14 @@
 </template>
 
 <script>
+    import Vue from 'vue'
+    import Vuelidate from 'vuelidate'
+
+    Vue.use(Vuelidate)
+
     import {required} from 'vuelidate/lib/validators'
+
+
     export default {
         data() {
             return {

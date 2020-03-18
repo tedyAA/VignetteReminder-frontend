@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <h2>Register New User</h2>
+                    <h2 class="h2">Register New User</h2>
                     <hr>
                 </div>
             </div>
@@ -13,20 +13,23 @@
                     <label for="name">Name</label>
                 </div>
                 <div class="col-md-6 ">
-                    <div class="form-group" :class="{ 'form-group--error': $v.fName.$error }" >
+                    <div class="form-group">
                         <div class="input-group mb-2 mr-sm-2 ">
                             <div class="input-group-addon" style="width: 2.6rem "><i class="fa fa-user"></i></div>
                             <input type="text" name="name" class="form-control" id="name" v-model="first_name"
                                    v-model.trim="$v.fName.$model"
-                                   placeholder="John" >
-                            <br />
-                            <div class="error" v-if="!$v.fName.required">Field is required</div>
+                                   :class="{'is-invalid' :$v.fName.$error,
+                                   'is-valid' :!$v.fName.$invalid}" placeholder="John">
+                            <div class="invalid-feedback">Name must be at least {{$v.fName.$params.minLength.min}}
+                                characters
+                            </div>
+
                         </div>
                     </div>
                 </div>
                 <p>.</p>
-                <br />
-                <div class="col-md-3 field-label-responsive" :class="{ 'form-group--error': $v.lName.$error }" >
+                <br/>
+                <div class="col-md-3 field-label-responsive" :class="{ 'form-group--error': $v.lName.$error }">
                     <label for="name">Last Name</label>
                 </div>
                 <div class="col-md-6">
@@ -34,80 +37,99 @@
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
                             <input type="text" name="name" class="form-control" id="Lname" v-model="last_name"
+                                   placeholder="Doe" required autofocus
                                    v-model.trim="$v.lName.$model"
-                                   placeholder="Doe" required autofocus>
+                                   :class="{'is-invalid' :$v.lName.$error,
+                                   'is-valid' :!$v.lName.$invalid}">
+                            <div class="invalid-feedback">Name must be at least {{$v.lName.$params.minLength.min}}
+                                characters
+                            </div>
                         </div>
-                        <div class="error" v-if="!$v.lName.required">Field is required</div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-control-feedback">
-                        <span class="text-danger align-middle">
-                            <!-- Put name validation error messages here -->
-                        </span>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 field-label-responsive" :class="{ 'form-group--error': $v.eMail.$error }" >
+                <div class="col-md-3 field-label-responsive" :class="{ 'form-group--error': $v.eMail.$error }">
                     <label for="email">E-Mail Address</label>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-                            <input type="text" name="email" class="form-control" id="email" v-model="email"
+                            <input type="text" name="email" class="form-control" id="email"
+                                   placeholder="you@example.com" required autofocus
+                                   v-model="email"
                                    v-model.trim="$v.eMail.$model"
-                                   placeholder="you@example.com" required autofocus>
+                                   :class="{'is-invalid' :$v.eMail.$error,
+                                    'is-valid':!$v.eMail.$invalid}">
+                            <div class="valid-feedback">e-mail is valid</div>
+                            <div class="invalid-feedback">
+                                <span v-if="!$v.eMail.required">e-mail is required</span>
+                                <span v-if="!$v.eMail.isUnique">this e-mail is invalid or already taken</span>
+                            </div>
                         </div>
-                        <div class="error" v-if="!$v.eMail.required">Field is required</div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-control-feedback">
                         <span class="text-danger align-middle">
-                            <!-- Put e-mail validation error messages here -->
                         </span>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 field-label-responsive" :class="{ 'form-group--error': $v.pass.$error }" >
+                <div class="col-md-3 field-label-responsive">
                     <label for="password">Password</label>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group has-danger">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-                            <input type="password" name="password" class="form-control" id="password" v-model="password"
-                                   v-model.trim="$v.pass.$model"
-                                   placeholder="Password" required>
+                            <input type="password" name="password" class="form-control" id="password"
+                                   placeholder="Password" required
+                                   v-model="password"
+                                   v-model.trim="$v.pass.$model" :class="{'is-invalid':$v.pass.$error,
+                                   'is-valid':!$v.pass.$invalid}">
+                            <div class="invalid-feedback">
+                                <span v-if="!$v.pass.required">pass is required</span>
+                                <span v-if="!$v.pass.minLength">{{$v.pass.$params.minLength.min}} characters minimum</span>
+                            </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="col-md-3">
                     <div class="form-control-feedback">
                     </div>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-md-3 field-label-responsive" :class="{ 'form-group--error': $v.conPassword.$error }" >
-                    <label for="password">Confirm Password</label>
+                <div class="col-md-3 field-label-responsive">
+                    <label for="password">Password</label>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group">
+                    <div class="form-group has-danger">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                            <div class="input-group-addon" style="width: 2.6rem">
-                                <i class="fa fa-repeat"></i>
-                            </div>
-                            <input type="password" name="password-confirmation" class="form-control"
-                                   v-model.trim="conPassword.$model"
+                            <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                            <input type="password" name="password" class="form-control" id="conPassword"
+                                   placeholder="Password" required
                                    v-model="password_confirmation"
-                                   id="password-confirm" placeholder="Confirm Password" required>
+                                   v-model.trim="$v.repPass.$model" :class="{'is-invalid':$v.repPass.$error,
+                                   'is-valid':(pass !='') ? !$v.repPass.$invalid : ''}">
+                            <div class="valid-feedback">Your pass is identical</div>
+                            <div class="invalid-feedback">
+                                <span v-if="!$v.repPass.sameAsPass">pass is not identical</span>
+                            </div>
                         </div>
                     </div>
-
+                </div>
+                <div class="col-md-3">
+                    <div class="form-control-feedback">
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -126,7 +148,7 @@
 
     Vue.use(Vuelidate)
 
-    import {required,sameAs,email} from 'vuelidate/lib/validators'
+    import {required, sameAs, email, minLength} from 'vuelidate/lib/validators'
 
     export default {
         data() {
@@ -135,7 +157,7 @@
                 lName: '',
                 eMail: '',
                 pass: '',
-                conPassword: '',
+                repPass: '',
 
 
                 first_name: '',
@@ -148,22 +170,37 @@
         },
         validations: {
             fName: {
-                required
+                required,
+                minLength: minLength(3)
             },
             lName: {
-                required
+                required,
+                minLength: minLength(3)
             },
             eMail: {
                 required,
-                email
+                email,
+                isUnique(value) {
+                    if (value === '')
+                        return true
+                    var re = /\S+@\S+\.\S+/;
+
+                    return new Promise((resolve => {
+                        setTimeout(() => {
+                            resolve(re.test(value))
+                        }, 350 + Math.random() * 300)
+                    }))
+
+                }
             },
             pass: {
                 required,
+                minLength: minLength(6)
 
             },
-            conPassword: {
+            repPass: {
                 required,
-                sameAsPassword: sameAs('pass')
+                sameAsPass: sameAs('pass')
             }
         }, methods: {
             onSubmit() {
@@ -198,11 +235,17 @@
             box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
             background-color: rgba(0, 158, 223, 0.8);
             opacity: inherit;
+            width: 1000px;
+            height: 550px;
         }
     }
 
     .form-control {
-        border-radius: 30px;
+        border-radius: 90px;
         background: rgba(175, 218, 235, 0.34);
+    }
+
+    .h2 {
+        margin-top: 50px;
     }
 </style>
