@@ -6,14 +6,13 @@
 </template>
 
 <script>
-  import HelloWorld from './components/HelloWorld.vue'
+
 
   // import MainNavBar from './components/MainNavBar.vue'
   export default {
     name: 'app',
     components: {
       // NavBar,
-      HelloWorld,
       // MainNavBar
     },
     data() {

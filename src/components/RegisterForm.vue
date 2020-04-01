@@ -16,7 +16,7 @@
                     <div class="form-group">
                         <div class="input-group mb-2 mr-sm-2 ">
                             <div class="input-group-addon" style="width: 2.6rem "><i class="fa fa-user"></i></div>
-                            <input type="text" name="name" class="form-control" id="name" v-model="first_name"
+                            <input type="text" name="name" class="input" id="name" v-model="first_name"
                                    v-model.trim="$v.fName.$model"
                                    :class="{'is-invalid' :$v.fName.$error,
                                    'is-valid' :!$v.fName.$invalid}" placeholder="John">
@@ -36,7 +36,7 @@
                     <div class="form-group">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-                            <input type="text" name="name" class="form-control" id="Lname" v-model="last_name"
+                            <input type="text" name="name" class="input" id="Lname" v-model="last_name"
                                    placeholder="Doe" required autofocus
                                    v-model.trim="$v.lName.$model"
                                    :class="{'is-invalid' :$v.lName.$error,
@@ -60,7 +60,7 @@
                     <div class="form-group">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-                            <input type="text" name="email" class="form-control" id="email"
+                            <input type="text" name="email" class="input" id="email"
                                    placeholder="you@example.com" required autofocus
                                    v-model="email"
                                    v-model.trim="$v.eMail.$model"
@@ -89,7 +89,7 @@
                     <div class="form-group has-danger">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-                            <input type="password" name="password" class="form-control" id="password"
+                            <input type="password" name="password" class="input" id="password"
                                    placeholder="Password" required
                                    v-model="password"
                                    v-model.trim="$v.pass.$model" :class="{'is-invalid':$v.pass.$error,
@@ -115,7 +115,7 @@
                     <div class="form-group has-danger">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-                            <input type="password" name="password" class="form-control" id="conPassword"
+                            <input type="password" name="password" class="input" id="conPassword"
                                    placeholder="Password" required
                                    v-model="password_confirmation"
                                    v-model.trim="$v.repPass.$model" :class="{'is-invalid':$v.repPass.$error,
@@ -247,5 +247,15 @@
 
     .h2 {
         margin-top: 50px;
+    }
+
+    .input {
+        width: 90%;
+        display: block;
+        color: #fff;
+        border: none;
+        padding: 8px 8px;
+        border-radius: 25px;
+        background: rgba(175, 218, 235, 0.34);
     }
 </style>

@@ -6,7 +6,7 @@
                 <upper-nav-bar>
                     <li><a @click="contacts">Contact</a></li>
                     <li><a @click="profile">Profile</a></li>
-                    <li><a @click="logOut">Log out</a></li>
+                    <li class="out"><a @click="logOut">Log out</a></li>
                 </upper-nav-bar>
                <car-table></car-table>
             </div>
@@ -58,6 +58,11 @@
 
     tr:nth-child(even) {
         background-color: #17a2b8;
+    }
+    .out{
+        position: absolute;
+        right: 0;
+        background-color: #009edf;
     }
 </style>
 

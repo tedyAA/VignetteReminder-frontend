@@ -11,7 +11,7 @@
                         <div class="group" :class="{ 'valid': !$v.name.$invalid,'invalid': $v.name.$error }">
                             <label for="user" class="label">Username or Email</label>
                             <input id="user1" type="text" class="input" v-model.trim="$v.name.$model" v-model="email">
-                            <div class="invalid" v-if="!$v.name.required">Field is required</div>
+                            <div class="error" v-if="!$v.name.required">Field is required</div>
                             <div class="valid" v-if="$v.name.required">corect</div>
                         </div>
                         <div class="group" :class="{ 'form-group--error': $v.pass.$error}">
@@ -58,7 +58,13 @@
                 required
             },
             pass: {
-                required
+                required,
+                // isUnique(value) {
+                //     return new Promise((resolve => {
+                //         setTimeout(() => {
+                //             resolve(re.test(value))
+                //         }, 350 + Math.random() * 300)
+                //     }))
             }
         },
         methods: {

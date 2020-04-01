@@ -5,13 +5,18 @@
                 <form id=" AddCarForm" @submit.prevent="onSubmit">
                     <h5>Enter car info.</h5>
                     <form class="" method="post" action="#">
-                        <div class="form-group" :class="{ 'form-group--error': $v.carName.$error }">
+                        <div class="form-group">
                             <label for="carName" class="cols-sm-2 control-label">Enter Your Car Name</label>
                             <div class="input">
                                 <input class="form-control" placeholder="Enter car Name" name="carN"
+                                       v-model="name"
                                        v-model.trim="$v.carName.$model"
-                                       v-model="name">
-                                <div class="error" v-if="!$v.carName.required">Field is required</div>
+                                       :class="{'is-invalid':$v.carName.$error,
+                                        'is-valid':!$v.carName.$invalid}">
+                                <div class="invalid-feedback">
+                                    <span v-if="!$v.carName.required">name is required</span>
+                                    <span v-if="!$v.carName.minLength">{{$v.carName.$params.minLength.min}} characters minimum</span>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group" :class="{ 'form-group--error': $v.carN.$error }">
@@ -19,8 +24,14 @@
                             <div class="input">
                                 <input class="form-control" placeholder="Enter car №" name="carN" id="vehicle_reg_no"
                                        v-model.trim="$v.carN.$model"
-                                       v-model="vehicle_reg_no">
-                                <div class="error" v-if="!$v.carN.required">Field is required</div>
+                                       v-model="vehicle_reg_no"
+                                       :class="{'is-invalid':$v.carN.$error,
+                                        'is-valid':!$v.carN.$invalid}">
+                                <div class="invalid-feedback">
+                                    <span v-if="!$v.carN.required">name is required</span>
+                                    <span v-if="!$v.carN.minLength">{{$v.carN.$params.minLength.min}} characters minimum</span>
+                                </div>
+
                             </div>
                         </div>
                         <div class="form-group">
@@ -53,13 +64,13 @@
 
     Vue.use(Vuelidate)
 
-    import {required} from 'vuelidate/lib/validators'
+    import {required, minLength} from 'vuelidate/lib/validators'
 
     export default {
         name: "Add",
         data() {
             return {
-                carName:'',
+                carName: '',
                 carN: '',
                 VIN: '',
                 sticker: '',
@@ -73,10 +84,18 @@
         },
         validations: {
             carName: {
-                required
+                required,
+                minLength: minLength(3)
             },
             carN: {
-                required
+                required,
+                minLength: minLength(6),
+                // isUnique(value) {
+                    // return new Promise((resolve => {
+                    //
+                    // }))
+
+                // }
             },
             VIN: {
                 required
@@ -103,6 +122,8 @@
                 console.log(formData);
                 this.$store.dispatch('vehicles/addVehicle', formData);
             }
+
+
         }
     }
 </script>
@@ -142,7 +163,7 @@
 
     .form-control {
         border: none;
-        padding: 15px 20px;
+        padding: 35px 40px;
         border-radius: 25px;
         background: rgba(175, 218, 235, 0.34);
         width: 100%;
@@ -162,11 +183,13 @@
         background: #1161ee;
         position: center;
         margin-left: 75px;
+
     }
 
-    .error {
-        color: red;
-        boreder: red;
+    .button {
+
+        color: #fff;
+        display: block;
     }
 
 </style>

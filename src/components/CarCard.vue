@@ -7,23 +7,24 @@
         <div class="row">
             <div class="xs12 sm6 md4 lg3" style="width: 18rem;" v-for="(vehicle, index) in vehicles" :key="vehicle.id">
                 <div class="card-body">
+                    <div class="card border-info shadow text-info p-3 my-card">
+                        <span class="fa fa-car" aria-hidden="true"></span></div>
                     <h4>Vehicle registration number: {{vehicle.vehicle_reg_no}}</h4>
-                    <h4 v-if="vehicle.frame_no">Frame number: {{vehicle.frame_no}}</h4>
-                    <h4 v-if="vehicle.sticker_no">Sticker number: {{vehicle.sticker_no}}</h4>
                     <h5 class="card-title">{{vehicle.name}}</h5>
                     <div class="row">
-                    <router-link :to="/vehicles/+ vehicle.id">
-                        <button class="btn btn-success mb-2 col-sm">View Reminders</button>
-                    </router-link>
-                    <div class="col col-lg-2">
-                    <button class="btn btn-danger" @click="removeVehicle(vehicle.id, index)">Remove Vehicle</button>
-                </div>
-                </div>
+                        <router-link :to="/vehicles/+ vehicle.id">
+                            <button class="btn btn-success mb-2 col-sm">View Reminders</button>
+                        </router-link>
+                        <div class="col col-lg-2">
+                            <button class="btn btn-danger" @click="removeVehicle(vehicle.id, index)">Remove Vehicle
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div >
-        <button @click="sendToAddPage" class="btn btn-success mt-5">+ Add Vehicle</button>
+        <div>
+            <button @click="sendToAddPage" class="btn btn-success mt-5">+ Add Vehicle</button>
         </div>
     </div>
 
@@ -39,7 +40,7 @@
                 vehicle_reg_no: '',
                 frame_no: '',
                 sticker_no: '',
-                vehicles: ['CT8337CP', 'CT8337CP','CT8337CP', 'CT8337CP','CT8337CP', 'CT8337CP']
+                vehicles: ['CT8337CP', 'CT8337CP', 'CT8337CP', 'CT8337CP', 'CT8337CP', 'CT8337CP']
             }
         },
         methods: {
@@ -63,18 +64,22 @@
 </script>
 
 <style scoped>
-    .xs12{
+    .xs12 {
         margin-left: 30px;
         margin-top: 50px;
         font-family: Pacifico;
-        border-radius: 30px;
+        border-radius: 40px;
         box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
         background-color: rgba(0, 158, 223, 0.8);
     }
 
-    /*.container {*/
-    /*    display: table;*/
-    /*    clear: both;*/
-    /*    float: left;*/
-    /*}*/
+    .my-card {
+        border-radius: 50%;
+        width: 50px;
+        margin-left: 100px;
+    }
+
+    .btn {
+        border-radius: 30px;
+    }
 </style>

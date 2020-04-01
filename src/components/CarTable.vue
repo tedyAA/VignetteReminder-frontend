@@ -1,6 +1,7 @@
 <template>
-    <div>
-        <div class="container">
+    <div class="ff">
+    <div class="tables">
+        <div class="col col-lg-10">
             <h1>Details and reminders for vehicle with the id of .</h1>
             <h1>Sorry, we couldn't find a vehicle with the id of in your collection.</h1>
             <form>
@@ -20,11 +21,11 @@
                     <label for="vehicleStickerNo">Vehicle Sticker Number</label>
                     <input type="text" class="form-control" id="vehicleStickerNo">
                 </div>
-                <button class="btn btn-success mt-2">Save Vehicle Details</button>
+                <button class="btn btn-success mt-2 mr-3 ">Save Vehicle Details</button>
                 <button class="btn btn-primary mt-2">Edit Vehicle Details</button>
             </form>
         </div>
-        <div class="containerB">
+        <div class="col col-lg-10">
             <form>
                 <div class="form-group">
                     <label for="reminderTitle">Reminder Title</label>
@@ -42,12 +43,12 @@
                     <label for="note">Note</label>
                     <input type="text" class="form-control" id="note">
                 </div>
-                <button class="btn btn-primary mt-2">Save Reminder</button>
-                <button class="btn btn-success mt-2">Edit Reminder</button>
+                <button class="btn btn-success mt-2 mr-3">Save Reminder</button>
+                <button class="btn btn-primary mt-2">Edit Reminder</button>
                 <!--                <button v-else class="btn btn-primary mt-2" @click="editDetails()">Edit Vehicle Details</button>-->
             </form>
         </div>
-        <div class="containerC">
+        <div class="col col-lg-10">
 
             <table class="table">
                 <thead>
@@ -79,6 +80,7 @@
             </table>
         </div>
     </div>
+    </div>
 </template>
 <script>
 
@@ -98,28 +100,18 @@
     }
 </script>
 <style scoped>
-    .container {
-        margin-top: 50px;
-        border-radius: 30px;
-        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
-        background-color: rgba(0, 158, 223, 0.8);
-    }
+    .col {
 
-    .containerB {
-        margin-top: 50px;
         border-radius: 30px;
         box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
         background-color: rgba(0, 158, 223, 0.8);
-        width: 1150px;
-        margin-left: 150px;
+        margin-top: 50px;
+        margin-left: 120px;
     }
+   .ff{
+        background-image: url("../views/ay.jpg");
+        background-repeat: repeat;
+        background-size: 100% 100%;
 
-    .containerC {
-        margin-top: 50px;
-        border-radius: 30px;
-        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
-        background-color: rgba(0, 158, 223, 0.8);
-        width: 1150px;
-        margin-left: 150px;
     }
 </style>

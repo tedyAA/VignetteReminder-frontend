@@ -6,7 +6,7 @@
                 <upper-nav-bar>
                     <li><a @click="contacts">Contact</a></li>
                     <li><a @click="profile">Profile</a></li>
-                    <li><a @click="logOut">Log out</a></li>
+                    <li class="out"><a @click="logOut">Log out</a></li>
                 </upper-nav-bar>
                 <add></add>
             </div>
@@ -42,5 +42,9 @@
 </script>
 
 <style scoped>
-
+    .out{
+        position: absolute;
+        right: 0;
+        background-color: #009edf;
+    }
 </style>
