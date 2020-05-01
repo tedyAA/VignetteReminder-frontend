@@ -1,11 +1,9 @@
 <template>
     <div class="col-4 col-lg-3 px-0">
         <div class="nav-side-menu w-100">
-            <div class="brand">Brand Logo</div>
+            <div class="brand"><img class="logo" src="../views/logo2.png"> </div>
             <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-
             <div class="menu-list">
-
                 <ul id="menu-content" class="menu-content collapse out" >
                     <li>
                         <a @click="dashboard">
@@ -100,5 +98,8 @@
         .nav-side-menu .menu-list .menu-content {
             display: block;
         }
+    }
+    .logo{
+        height: 130px;
     }
 </style>

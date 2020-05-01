@@ -51,7 +51,7 @@
                     </form>
                 </form>
                 <div class="group">
-                    <button class="button" type="submit">Add</button>
+                    <button type="submit" class="btn" :disabled="corect">Add</button>
                 </div>
             </div>
         </div>
@@ -78,7 +78,9 @@
                 name: '',
                 vehicle_reg_no: '',
                 frame_no: '',
-                sticker_no: ''
+                sticker_no: '',
+
+                disabled: false
 
             }
         },
@@ -124,6 +126,16 @@
             }
 
 
+        },
+        computed: {
+            corect() {
+                if (this.$v.carName.required && this.$v.carN.required) {
+                    return false
+                }
+                else {
+                    return true
+                }
+            }
         }
     }
 </script>
@@ -172,7 +184,7 @@
 
     }
 
-    .button {
+    .btn {
         text-transform: uppercase;
         border-radius: 50px;
         width: 50%;
@@ -186,10 +198,5 @@
 
     }
 
-    .button {
-
-        color: #fff;
-        display: block;
-    }
 
 </style>

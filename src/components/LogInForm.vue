@@ -12,7 +12,7 @@
                             <label for="user" class="label">Username or Email</label>
                             <input id="user1" type="text" class="input" v-model.trim="$v.name.$model" v-model="email">
                             <div class="error" v-if="!$v.name.required">Field is required</div>
-                            <div class="valid" v-if="$v.name.required">corect</div>
+
                         </div>
                         <div class="group" :class="{ 'form-group--error': $v.pass.$error}">
                             <label for="pass" class="label">Password</label>

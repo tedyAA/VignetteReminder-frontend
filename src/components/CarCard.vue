@@ -23,9 +23,7 @@
                 </div>
             </div>
         </div>
-        <div>
-            <button @click="sendToAddPage" class="btn btn-success mt-5">+ Add Vehicle</button>
-        </div>
+        <button @click="sendToAddPage" class="btn btn-success mt-5">+ Add Vehicle</button>
     </div>
 
 </template>

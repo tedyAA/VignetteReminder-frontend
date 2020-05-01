@@ -2,18 +2,16 @@
   <div id="app">
     <HelloWorld/>
     <router-view/>
+    <link rel="shortcut icon" type="image/png" href="/static/logo.png"/>
   </div>
 </template>
 
 <script>
 
-
-  // import MainNavBar from './components/MainNavBar.vue'
   export default {
     name: 'app',
     components: {
-      // NavBar,
-      // MainNavBar
+
     },
     data() {
       return {

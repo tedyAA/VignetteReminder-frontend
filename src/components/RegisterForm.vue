@@ -16,27 +16,26 @@
                     <div class="form-group">
                         <div class="input-group mb-2 mr-sm-2 ">
                             <div class="input-group-addon" style="width: 2.6rem "><i class="fa fa-user"></i></div>
-                            <input type="text" name="name" class="input" id="name" v-model="first_name"
+                            <input type="text" name="name" class="form-control" id="name"
+                                   v-model="first_name"
                                    v-model.trim="$v.fName.$model"
                                    :class="{'is-invalid' :$v.fName.$error,
                                    'is-valid' :!$v.fName.$invalid}" placeholder="John">
-                            <div class="invalid-feedback">Name must be at least {{$v.fName.$params.minLength.min}}
-                                characters
-                            </div>
-
+                            <div class="invalid-feedback">Name must be at least {{$v.fName.$params.minLength.min}} characters</div>
+                            <div class="error" ></div>
                         </div>
                     </div>
                 </div>
                 <p>.</p>
                 <br/>
-                <div class="col-md-3 field-label-responsive" :class="{ 'form-group--error': $v.lName.$error }">
+                <div class="col-md-3 field-label-responsive">
                     <label for="name">Last Name</label>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-                            <input type="text" name="name" class="input" id="Lname" v-model="last_name"
+                            <input type="text" name="name" class="form-control" id="Lname" v-model="last_name"
                                    placeholder="Doe" required autofocus
                                    v-model.trim="$v.lName.$model"
                                    :class="{'is-invalid' :$v.lName.$error,
@@ -53,20 +52,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 field-label-responsive" :class="{ 'form-group--error': $v.eMail.$error }">
+                <div class="col-md-3 field-label-responsive">
                     <label for="email">E-Mail Address</label>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-                            <input type="text" name="email" class="input" id="email"
+                            <input type="text" name="email" class="form-control" id="email"
                                    placeholder="you@example.com" required autofocus
                                    v-model="email"
                                    v-model.trim="$v.eMail.$model"
                                    :class="{'is-invalid' :$v.eMail.$error,
                                     'is-valid':!$v.eMail.$invalid}">
-                            <div class="valid-feedback">e-mail is valid</div>
                             <div class="invalid-feedback">
                                 <span v-if="!$v.eMail.required">e-mail is required</span>
                                 <span v-if="!$v.eMail.isUnique">this e-mail is invalid or already taken</span>
@@ -89,7 +87,7 @@
                     <div class="form-group has-danger">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-                            <input type="password" name="password" class="input" id="password"
+                            <input type="password" name="password" class="form-control" id="password"
                                    placeholder="Password" required
                                    v-model="password"
                                    v-model.trim="$v.pass.$model" :class="{'is-invalid':$v.pass.$error,
@@ -98,6 +96,7 @@
                                 <span v-if="!$v.pass.required">pass is required</span>
                                 <span v-if="!$v.pass.minLength">{{$v.pass.$params.minLength.min}} characters minimum</span>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -115,12 +114,11 @@
                     <div class="form-group has-danger">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-                            <input type="password" name="password" class="input" id="conPassword"
+                            <input type="password" name="password" class="form-control" id="conPassword"
                                    placeholder="Password" required
                                    v-model="password_confirmation"
                                    v-model.trim="$v.repPass.$model" :class="{'is-invalid':$v.repPass.$error,
                                    'is-valid':(pass !='') ? !$v.repPass.$invalid : ''}">
-                            <div class="valid-feedback">Your pass is identical</div>
                             <div class="invalid-feedback">
                                 <span v-if="!$v.repPass.sameAsPass">pass is not identical</span>
                             </div>
@@ -135,11 +133,12 @@
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <button type="submit" class="btn btn-success"><i class="fa fa-user-plus"></i> Register</button>
+                    <button type="submit" class="btn btn-success" :disabled="corect"><i class="fa fa-user-plus"></i> Register</button>
                 </div>
             </div>
         </form>
     </div>
+
 </template>
 
 <script>
@@ -158,7 +157,6 @@
                 eMail: '',
                 pass: '',
                 repPass: '',
-
 
                 first_name: '',
                 last_name: '',
@@ -202,7 +200,8 @@
                 required,
                 sameAsPass: sameAs('pass')
             }
-        }, methods: {
+        },
+        methods: {
             onSubmit() {
                 const formData = {
                     first_name: this.first_name,
@@ -214,10 +213,19 @@
                 console.log(formData)
                 this.$store.dispatch('auth/register', formData);
             }
+        },
+        computed: {
+            corect() {
+                if (this.$v.$invalid) {
+                    return true
+                }
+                else {
+                   return false
+                }
+            }
         }
+
     }
-
-
 </script>
 
 <style scoped>
@@ -239,17 +247,27 @@
             height: 550px;
         }
     }
+    .fff{
+        background-image: url("../views/ay.jpg");
+        background-repeat: repeat;
+        background-size: 100% 100%;
 
-    .form-control {
-        border-radius: 90px;
-        background: rgba(175, 218, 235, 0.34);
     }
 
     .h2 {
         margin-top: 50px;
     }
 
-    .input {
+    .input{
+        width: 90%;
+        display: block;
+        color: #fff;
+        border: none;
+        padding: 8px 8px;
+        border-radius: 25px;
+        background: rgba(175, 218, 235, 0.34);
+    }
+    .form-control{
         width: 90%;
         display: block;
         color: #fff;
