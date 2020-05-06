@@ -6,6 +6,7 @@
                 <upper-nav-bar>
                     <li><a @click="contacts">Contact</a></li>
                     <li><a @click="profile">Profile</a></li>
+                    <li><a @click="news">News</a></li>
                     <li class="out"><a @click="logOut">Log out</a></li>
                 </upper-nav-bar>
               <profile-form></profile-form>
@@ -30,6 +31,9 @@
             },
             contacts() {
                 this.$router.push('/contacts')
+            },
+            news() {
+                this.$router.push('/news')
             },
 
         },

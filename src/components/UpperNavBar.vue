@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul>
-            <li><a class="active" >Home</a></li>
+            <li><a class="active" >Remind me</a></li>
             <slot></slot>
         </ul>
     </div>

@@ -14,12 +14,6 @@
                     <li data-toggle="collapse" data-target="#new" class="collapsed">
                         <a @click="add"><i class="fa fa-car fa-lg"></i> New </a>
                     </li>
-
-                    <li>
-                        <a @click="profile">
-                            <i class="fa fa-user fa-lg"></i> Profile
-                        </a>
-                    </li>
                 </ul>
 
             </div>

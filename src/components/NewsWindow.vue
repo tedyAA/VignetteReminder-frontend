@@ -1,11 +1,13 @@
 <template>
-    <div class="news">
-        <h1>News</h1>
-        <p class="p">Tyger Tyger, burning bright,
-            In the forests of the night;
-            What immortal hand or eye,
-            Could frame thy fearful symmetry?
-            http://www.api.bg/index.php/bg/prescentar/novini</p>
+    <div class="container">
+        <div class="col-md-9">
+            <div class="profile-content">
+                <div>
+                    <h1>News</h1>
+                </div>
+                Some news content goes here...
+            </div>
+        </div>
     </div>
 </template>
 
@@ -16,15 +18,13 @@
 </script>
 
 <style scoped>
-    .news{
-        width: 500px;
-        height: 200px;
-        margin-top: 50px;
+    .container {
+        width: 600px;
+        height: 400px;
+        border-radius: 30px;
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
         background-color: rgba(0, 158, 223, 0.8);
-        opacity: inherit;
-        border-radius: 25px;
-    }.p{
-        font-size:25px ;
-         }
+        margin-top: 70px;
+    }
 
 </style>

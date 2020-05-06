@@ -8,8 +8,9 @@ import CarPage from "../views/CarPage";
 import AddCar from "../views/AddCar";
 import Contacts from "../views/Contacts";
 import UserProfile from "../views/UserProfile";
-import CarInfo from "../views/CarInfo";
 import Reminders from "../components/Reminders";
+import AboutUs from "../views/AboutUs";
+import NewsPage from "../views/NewsPage";
 
 
 Vue.use(VueRouter)
@@ -56,14 +57,19 @@ const routes = [
     component: AddCar
   },
   {
-    path: '/info',
-    name: 'info',
-    component: CarInfo
-  },
-  {
     path: '/reminders',
     name: 'reminders',
     component: Reminders
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: AboutUs
+  },
+  {
+    path: '/news',
+    name: 'news',
+    component: NewsPage
   },
   {
     path:'*', redirect:'/main'

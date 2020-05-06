@@ -2,8 +2,7 @@
     <div class="RegisterForm">
         <upper-nav-bar>
             <li><a @click="logIn">Log In</a></li>
-            <li><a @click="register">Register</a></li>
-            <li><a @click="register">About us</a></li>
+            <li><a @click="about">About us</a></li>
         </upper-nav-bar>
         <register-form></register-form>
     </div>
@@ -20,8 +19,8 @@
             logIn() {
                 this.$router.push('/')
             },
-            register() {
-                this.$router.push('/register')
+            about() {
+                this.$router.push('/about')
             },
 
         },

@@ -1,5 +1,6 @@
 <template>
-    <form>
+    <form class="login">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <div class="login-wrap">
             <div class="login-html">
                 <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign
@@ -250,5 +251,7 @@
         color: red;
         boreder:red;
     }
-
+    @media only screen and (max-width: 600px) {
+        .login {width: 70.66%;}
+    }
 </style>

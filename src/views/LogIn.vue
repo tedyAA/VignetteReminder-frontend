@@ -1,13 +1,14 @@
 <template>
     <div class="login">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <upper-nav-bar>
-            <li><a @click="logIn">Log In</a></li>
             <li><a @click="register">Register</a></li>
-            <li><a @click="register">About us</a></li>
+            <li><a @click="about">About us</a></li>
         </upper-nav-bar>
         <log-in-form/>
 
     </div>
+
 </template>
 
 <script>
@@ -20,11 +21,11 @@
             home() {
                 this.$router.push('/welcome')
             },
-            logIn() {
-                this.$router.push('/')
-            },
             register() {
                 this.$router.push('/register')
+            },
+            about() {
+                this.$router.push('/about')
             },
 
         },

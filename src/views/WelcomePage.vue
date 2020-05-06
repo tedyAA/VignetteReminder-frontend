@@ -1,45 +1,38 @@
 <template>
     <div class="WelcomeForm">
         <upper-nav-bar>
-            <li><a @click="logIn">Log In</a></li>
-            <li><a @click="register">Register</a></li>
-            <li><a @click="register">About us</a></li>
+            <li><a @click="aboutus">About us</a></li>
         </upper-nav-bar>
-        <welcome-form></welcome-form>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <news-window></news-window>
-                </div>
-                <div class="col-lg-6">
-                    <package-window></package-window>
-                </div>
-            </div>
-        </div>
+        <h3>Welcome to our webpage</h3>
+        <h1>you drive, we remind</h1>
+        <h3>get started</h3>
+
+        <button class="btn btn-primary" @click="Login">Log In</button>
+        <button class="btn btn-primary" @click="Register">Register</button>
+
     </div>
 </template>
 
 <script>
-    import WelcomeForm from "../components/WelcomeForm.vue";
+
     import UpperNavBar from "../components/UpperNavBar";
-    import NewsWindow from "../components/NewsWindow";
-    import PackageWindow from "../components/PackageWindow";
+
 
     export default {
         components: {
-            WelcomeForm,
+            // WelcomeForm,
             UpperNavBar,
-            NewsWindow,
-            PackageWindow
+            // NewsWindow,
+            // PackageWindow
         },
         methods: {
-            home() {
-                this.$router.push('/welcome')
+            aboutus() {
+                this.$router.push('/about')
             },
-            logIn() {
+            Login() {
                 this.$router.push('/')
             },
-            register() {
+            Register() {
                 this.$router.push('/register')
             },
 
@@ -47,29 +40,37 @@
     }
 </script>
 
-<style>
+<style scoped>
 
+    h3 {
+        margin-top: 60px;
+        color: darkblue;
+        font-family: Courier New;
+        font-style: italic;
+        font-weight: bolder;
+        font-size: 40px;
 
-    .move1 {
-        background: #00CED1;
-        color: #ffffff !important;
-        display: inline-block;
-        font-size: 15px;
-        font-weight: 500;
-        width: 120px;
-        height: 70px;
-        line-height: 0.8;
-        padding: 18px 30px;
-        text-transform: capitalize;
-        border-radius: 1px;
-        letter-spacing: 0.5px;
-        border: 0px !important;
-        cursor: pointer;
-        border-radius: 100px;
+    }
 
-    } .navbar-right {
+    h1 {
+        margin-top: 60px;
+        color: darkblue;
+        font-family: Courier New;
+        font-style: italic;
+        font-weight: bolder;
+        font-size: 60px;
 
-           display: inline-block;
-           margin-left: 800px;
-       }
+    }
+
+    .btn {
+        position: relative;
+        transition: .5s ease;
+        top: 120px;
+        border-radius: 50px;
+        border: none;
+        background: rgba(175, 218, 235, 0.34);
+        background: #1161ee;
+        width: 150px;
+        height: 50px;
+    }
 </style>

@@ -1,28 +1,33 @@
 <template>
     <div class="container-fluid h-100">
         <div class="row h-100">
-                <MainNavBar></MainNavBar>
+            <MainNavBar></MainNavBar>
             <div class="col-8 col-lg-9 px-0">
                 <upper-nav-bar>
                     <li><a @click="contacts">Contact</a></li>
                     <li><a @click="profile">Profile</a></li>
+                    <li><a @click="news">News</a></li>
                     <li class="out"><a @click="logOut">Log out</a></li>
                 </upper-nav-bar>
-                <car-table></car-table>
+               <NewsWindow></NewsWindow>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-  import CarTable from "../components/CarTable";
-    import UpperNavBar from "../components/UpperNavBar";
     import MainNavBar from "../components/MainNavBar";
-
+    import UpperNavBar from "../components/UpperNavBar";
+    import NewsWindow from "../components/NewsWindow";
     export default {
-        name: "CarInfo",
+        name: "NewsPage",
+        components:{
+            NewsWindow,
+            UpperNavBar,
+            MainNavBar
+        },
         methods: {
-           profile() {
+            profile() {
                 this.$router.push('/profile')
             },
             logOut() {
@@ -31,13 +36,12 @@
             contacts() {
                 this.$router.push('/contacts')
             },
+            news() {
+                this.$router.push('/news')
+            },
 
         },
-        components: {
-            CarTable,
-            UpperNavBar,
-            MainNavBar
-        }
+
     }
 </script>
 
