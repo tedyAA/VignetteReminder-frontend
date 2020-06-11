@@ -1,5 +1,5 @@
 <template>
-    <div class="col-4 col-lg-3 px-0">
+    <div class="col-4 col-lg-2 px-0">
         <div class="nav-side-menu w-100">
             <div class="brand"><img class="logo" src="../views/logo2.png"> </div>
             <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
@@ -78,6 +78,7 @@
     .nav-side-menu li a {
         text-decoration: none;
         color: #e1ffff;
+        font-size: 14px;
     }
     .nav-side-menu li:hover {
         border-left: 3px solid #d19b3d;
@@ -94,6 +95,6 @@
         }
     }
     .logo{
-        height: 130px;
+        height: 57px;
     }
 </style>

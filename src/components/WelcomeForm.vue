@@ -20,13 +20,13 @@
     margin-top: 50px;
     background-color: rgba(0, 158, 223, 0.8);
     opacity: inherit;
-    /*background-image:url("car.jpg") ;*/
-
+    color:white;
     border-radius: 25px;
 
 }.text{
     font-family: Pacifico;
     font-size: medium;
+
  }
 
 </style>

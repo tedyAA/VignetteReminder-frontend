@@ -2,7 +2,7 @@
     <div class="container-fluid h-100">
         <div class="row h-100">
             <MainNavBar></MainNavBar>
-            <div class="col-8 col-lg-9 px-0">
+            <div class="col-8 col-lg-10 px-0">
                 <upper-nav-bar>
                     <li><a @click="contacts">Contact</a></li>
                     <li><a @click="profile">Profile</a></li>

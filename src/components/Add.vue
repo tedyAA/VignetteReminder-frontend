@@ -152,16 +152,14 @@
     }
 
     .main-center {
-        margin-top: 30px;
         margin: 0 auto;
         max-width: 400px;
         padding: 10px 40px;
-        background: #009edf;
         color: #FFF;
         text-shadow: none;
         -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
         -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
-        border-radius: 30px;
+        border-radius: 8px;
         box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
         background-color: rgba(0, 158, 223, 0.8);
 
@@ -186,15 +184,17 @@
 
     .btn {
         text-transform: uppercase;
-        border-radius: 50px;
+        border-radius: 8px;
         width: 50%;
         display: block;
         border: none;
         padding: 15px 20px;
-        background: rgba(175, 218, 235, 0.34);
+        /*background: rgba(175, 218, 235, 0.34);*/
         background: #1161ee;
         position: center;
         margin-left: 75px;
+        color:white;
+
 
     }
 

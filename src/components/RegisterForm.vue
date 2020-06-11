@@ -245,6 +245,7 @@
             opacity: inherit;
             width: 1000px;
             height: 550px;
+            color:white;
         }
     }
     .fff{

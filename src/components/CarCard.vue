@@ -63,7 +63,7 @@
 
 <style scoped>
     .xs12 {
-        margin-left: 30px;
+        margin-left: 65px;
         margin-top: 50px;
         font-family: Pacifico;
         border-radius: 40px;
@@ -80,4 +80,7 @@
     .btn {
         border-radius: 30px;
     }
+    h4{
+        color:white;
+         }
 </style>

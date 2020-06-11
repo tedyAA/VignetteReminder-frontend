@@ -66,11 +66,12 @@
         position: relative;
         transition: .5s ease;
         top: 120px;
-        border-radius: 50px;
+        border-radius: 8px;
         border: none;
         background: rgba(175, 218, 235, 0.34);
         background: #1161ee;
         width: 150px;
         height: 50px;
+        margin-left:10px;
     }
 </style>

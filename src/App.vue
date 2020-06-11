@@ -32,7 +32,8 @@
     text-align: center;
 
 
-    background-image: url("./views/ay.jpg");
+    /*background-image: url("./views/ay.jpg");*/
+    background-color:#b7dcee;
     background-repeat: repeat;
     background-size: 100% 100%;
     height: 100vh;
