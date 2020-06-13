@@ -64,7 +64,7 @@
 <style scoped>
     .xs12 {
         margin-left: 65px;
-        margin-top: 50px;
+        margin-top: 30px;
         font-family: Pacifico;
         border-radius: 40px;
         box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);

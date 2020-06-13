@@ -37,6 +37,7 @@
     background-repeat: repeat;
     background-size: 100% 100%;
     height: 100vh;
+    width: 100%;
     margin: 0px auto 0;
     position: relative;
   }

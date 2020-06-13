@@ -73,7 +73,7 @@
         margin-top: 20px;
         max-width: 1300px;
         /*width: 150px;*/
-        height: 650px;
+        height: 500px;
         padding-right: 10px;
         padding-left: 10px;
         border-radius: 30px;

@@ -238,13 +238,13 @@
 
         .container {
 
-            margin-top: 50px;
+            margin-top: 30px;
             border-radius: 30px;
             box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
             background-color: rgba(0, 158, 223, 0.8);
             opacity: inherit;
             width: 1000px;
-            height: 550px;
+            height: 500px;
             color:white;
         }
     }
