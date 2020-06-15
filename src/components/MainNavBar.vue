@@ -45,7 +45,7 @@
         font-family: verdana;
         font-size: 12px;
         font-weight: 200;
-        background-color: #2e353d;
+        background-color: #23282e;
         /*position: fixed;*/
         top: 0px;
         /*width: 24%;*/
