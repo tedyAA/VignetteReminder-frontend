@@ -20,17 +20,15 @@
 
     export default {
         components: {
-            // WelcomeForm,
+
             UpperNavBar,
-            // NewsWindow,
-            // PackageWindow
         },
         methods: {
             aboutus() {
                 this.$router.push('/about')
             },
             Login() {
-                this.$router.push('/')
+                this.$router.push('/log')
             },
             Register() {
                 this.$router.push('/register')

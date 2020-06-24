@@ -21,8 +21,10 @@
                                    v-model.trim="$v.fName.$model"
                                    :class="{'is-invalid' :$v.fName.$error,
                                    'is-valid' :!$v.fName.$invalid}" placeholder="John">
-                            <div class="invalid-feedback">Name must be at least {{$v.fName.$params.minLength.min}} characters</div>
-                            <div class="error" ></div>
+                            <div class="invalid-feedback">Name must be at least {{$v.fName.$params.minLength.min}}
+                                characters
+                            </div>
+                            <div class="error"></div>
                         </div>
                     </div>
                 </div>
@@ -133,7 +135,9 @@
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <button type="submit" class="btn btn-success" :disabled="corect"><i class="fa fa-user-plus"></i> Register</button>
+                    <button type="submit" class="btn btn-success" :disabled="corect"><i class="fa fa-user-plus"></i>
+                        Register
+                    </button>
                 </div>
             </div>
         </form>
@@ -218,9 +222,8 @@
             corect() {
                 if (this.$v.$invalid) {
                     return true
-                }
-                else {
-                   return false
+                } else {
+                    return false
                 }
             }
         }
@@ -234,6 +237,7 @@
         .field-label-responsive {
             padding-top: .5rem;
             text-align: right;
+
         }
 
         .container {
@@ -241,40 +245,19 @@
             margin-top: 30px;
             border-radius: 30px;
             box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
-            background-color: rgba(0, 158, 223, 0.8);
+            background-color: white;
             opacity: inherit;
             width: 1000px;
             height: 500px;
-            color:white;
+            color: black;
         }
-    }
-    .fff{
-        background-image: url("../views/ay.jpg");
-        background-repeat: repeat;
-        background-size: 100% 100%;
-
     }
 
     .h2 {
         margin-top: 50px;
     }
-
-    .input{
-        width: 90%;
-        display: block;
-        color: #fff;
-        border: none;
-        padding: 8px 8px;
-        border-radius: 25px;
-        background: rgba(175, 218, 235, 0.34);
-    }
     .form-control{
-        width: 90%;
-        display: block;
-        color: #fff;
-        border: none;
-        padding: 8px 8px;
-        border-radius: 25px;
-        background: rgba(175, 218, 235, 0.34);
+        background: rgba(35, 37, 38, 0.07);
     }
+
 </style>

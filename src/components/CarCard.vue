@@ -13,10 +13,10 @@
                     <h5 class="card-title">{{vehicle.name}}</h5>
                     <div class="row">
                         <router-link :to="/vehicles/+ vehicle.id">
-                            <button class="btn btn-success mb-2 col-sm">View Reminders</button>
+                            <button class="btn btn-outline-success mb-2 col-sm">View Reminders</button>
                         </router-link>
                         <div class="col col-lg-2">
-                            <button class="btn btn-danger" @click="removeVehicle(vehicle.id, index)">Remove Vehicle
+                            <button class="btn btn-outline-danger" @click="removeVehicle(vehicle.id, index)">Remove Vehicle
                             </button>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                 vehicle_reg_no: '',
                 frame_no: '',
                 sticker_no: '',
-                vehicles: ['CT8337CP', 'CT8337CP', 'CT8337CP', 'CT8337CP', 'CT8337CP', 'CT8337CP']
+                vehicles: '',
             }
         },
         methods: {
@@ -68,7 +68,8 @@
         font-family: Pacifico;
         border-radius: 40px;
         box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
-        background-color: rgba(0, 158, 223, 0.8);
+        background-color:white;
+        color:black;
     }
 
     .my-card {
@@ -80,7 +81,7 @@
     .btn {
         border-radius: 30px;
     }
-    h4{
-        color:white;
-         }
+    /*h4{*/
+    /*    color:white;*/
+    /*     }*/
 </style>

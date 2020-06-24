@@ -51,7 +51,9 @@
                     </form>
                 </form>
                 <div class="group">
-                    <button type="submit" class="btn" :disabled="corect">Add</button>
+                    <button type="submit" class="btn btn-outline-success"
+                            :disabled="corect" @click="onSubmit">Add
+                    </button>
                 </div>
             </div>
         </div>
@@ -93,9 +95,9 @@
                 required,
                 minLength: minLength(6),
                 // isUnique(value) {
-                    // return new Promise((resolve => {
-                    //
-                    // }))
+                // return new Promise((resolve => {
+                //
+                // }))
 
                 // }
             },
@@ -131,8 +133,7 @@
             corect() {
                 if (this.$v.carName.required && this.$v.carN.required) {
                     return false
-                }
-                else {
+                } else {
                     return true
                 }
             }
@@ -141,61 +142,34 @@
 </script>
 
 <style scoped>
-    .main {
-        padding: 40px 0;
-    }
 
-    .main input,
-    .main input::-webkit-input-placeholder {
-        font-size: 11px;
-        padding-top: 3px;
-    }
+    /*.input{*/
+    /*    width: 40px;*/
+    /*    height: 20px;*/
+    /*}*/
 
     .main-center {
         margin: 0 auto;
         max-width: 400px;
         padding: 10px 40px;
-        color: #FFF;
-        text-shadow: none;
-        -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
-        -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
         border-radius: 8px;
         box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
-        background-color: rgba(0, 158, 223, 0.8);
-
-
-    }
-
-    span.input-group-addon i {
-        color: #009edf;
-        font-size: 17px;
+        background-color: white;
+        margin-top: 50px;
     }
 
     .form-control {
         border: none;
-        padding: 35px 40px;
         border-radius: 25px;
-        background: rgba(175, 218, 235, 0.34);
-        width: 100%;
-        color: #fff;
+        background: rgba(35, 37, 38, 0.07);
+        color: black;
         display: block;
-
+        font-size: 16px;
+        height: 50px;
     }
 
     .btn {
-        text-transform: uppercase;
-        border-radius: 8px;
         width: 50%;
-        display: block;
-        border: none;
-        padding: 15px 20px;
-        /*background: rgba(175, 218, 235, 0.34);*/
-        background: #1161ee;
-        position: center;
-        margin-left: 75px;
-        color:white;
-
-
     }
 
 

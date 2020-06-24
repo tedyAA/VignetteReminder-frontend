@@ -22,7 +22,7 @@
                             <div class="error" v-if="!$v.pass.required">Field is required</div>
                         </div>
                         <div class="group">
-                            <input type="submit" class="button" value="Sign In" id="btn">
+                            <input type="submit" class="btn btn-primary" value="Sign In" id="btn">
                         </div>
                     </div>
                     <div class="for-pwd-htm">
@@ -94,7 +94,7 @@
         background-size: cover;
         border-radius: 30px;
         box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
-        background-color: rgba(0, 158, 223, 0.8);
+        background-color: white;
 
     }
 
@@ -129,7 +129,7 @@
 
     .login-html .sign-in:checked + .tab,
     .login-html .for-pwd:checked + .tab {
-        color: #fff;
+        color: black;
         border-color: #1475ee;
 
     }
@@ -151,7 +151,7 @@
     .login-form .group .input,
     .login-form .group .button {
         width: 100%;
-        color: #fff;
+        color: black;
         display: block;
     }
 
@@ -160,98 +160,23 @@
         border: none;
         padding: 15px 20px;
         border-radius: 25px;
-        background: rgba(175, 218, 235, 0.34);
+        background: rgba(35, 37, 38, 0.07);
     }
 
-    .login-form .group input[data-type="password"] {
-        text-security: circle;
-        -webkit-text-security: circle;
-    }
 
     .login-form .group .label {
-        color: #ffffff;
-        font-size: 12px;
+        color: black;
+        font-size: 14px;
     }
-
-    .login-form .group .button {
-        background: #1161ee;
-    }
-
-    .login-form .group label .icon {
-        width: 15px;
-        height: 15px;
-        border-radius: 2px;
-        position: relative;
-        display: inline-block;
-        background: rgba(255, 255, 255, .1);
-
-    }
-
-    .login-form .group label .icon:before,
-    .login-form .group label .icon:after {
-        content: '';
-        width: 10px;
-        height: 2px;
-        background: #a5f7ff;
-        position: absolute;
-        -webkit-transition: all .2s ease-in-out 0s;
-        transition: all .2s ease-in-out 0s;
-    }
-
-    .login-form .group label .icon:before {
-        left: 3px;
-        width: 5px;
-        bottom: 6px;
-        -webkit-transform: scale(0) rotate(0);
-        transform: scale(0 npm) rotate(0);
-    }
-
-    .login-form .group label .icon:after {
-        top: 6px;
-        right: 0;
-        -webkit-transform: scale(0) rotate(0);
-        transform: scale(0) rotate(0);
-    }
-
-    .login-form .group .check:checked + label {
-        color: #ff48a4;
-    }
-
-    .login-form .group .check:checked + label .icon {
-        background: #1161ee;
-    }
-
-    .login-form .group .check:checked + label .icon:before {
-        -webkit-transform: scale(1) rotate(45deg);
-        transform: scale(1) rotate(45deg);
-    }
-
-    .login-form .group .check:checked + label .icon:after {
-        -webkit-transform: scale(1) rotate(-45deg);
-        transform: scale(1) rotate(-45deg);
-    }
-
-    .login-html .sign-in:checked + .tab + .for-pwd + .tab + .login-form .sign-in-htm {
-        -webkit-transform: rotate(0);
-        transform: rotate(0);
-    }
-
-    .login-html .for-pwd:checked + .tab + .login-form .for-pwd-htm {
-        -webkit-transform: rotate(0);
-        transform: rotate(0);
-    }
-
-    .hr {
-        height: 2px;
-        margin: 60px 0 50px 0;
-        background: rgba(255, 255, 255, .2);
-    }
-
     .error, .input{
         color: red;
-        boreder:red;
     }
     @media only screen and (max-width: 600px) {
         .login {width: 70.66%;}
+    }
+    .btn{
+        margin-top: 40px;
+        width:200px;
+
     }
 </style>

@@ -26,7 +26,7 @@
                 this.$router.push('/profile')
             },
             logOut() {
-                this.$router.push('/')
+                this.$router.push('/log')
             },
             contacts() {
                 this.$router.push('/contacts')
@@ -49,6 +49,6 @@
     .out{
         position: absolute;
         right: 0;
-        background-color: #009edf;
+        /*background-color: #009edf;*/
     }
 </style>

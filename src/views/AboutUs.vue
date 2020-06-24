@@ -3,7 +3,6 @@
         <upper-nav-bar>
             <li><a @click="Login">Log In</a></li>
             <li><a @click="Register">Register</a></li>
-            <li><a @click="aboutus">About us</a></li>
         </upper-nav-bar>
         <div class="wrapper">
             <div class="aboutus-secktion paddingTB60">
@@ -52,11 +51,8 @@
             UpperNavBar
         },
         methods: {
-            aboutus() {
-                this.$router.push('/about')
-            },
             Login() {
-                this.$router.push('/')
+                this.$router.push('/log')
             },
             Register() {
                 this.$router.push('/register')
@@ -78,9 +74,9 @@
         padding-left: 10px;
         border-radius: 30px;
         box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
-        background-color: rgba(0, 158, 223, 0.8);
+        background-color: white;
         opacity: inherit;
-        color:white;
+        color:black;
 
     }
 

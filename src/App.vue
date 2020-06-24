@@ -33,7 +33,7 @@
 
 
     /*background-image: url("./views/ay.jpg");*/
-    background-color:#b7dcee;
+    background-color:#f5f5f5;
     background-repeat: repeat;
     background-size: 100% 100%;
     height: 100vh;

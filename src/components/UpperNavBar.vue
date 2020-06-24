@@ -35,14 +35,14 @@
         margin: 0px;
         list-style-type: none;
         overflow: hidden;
-        background-color: #438acf;;
+        /*background-color: #438acf;;*/
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     }
 
     li {
         float: left;
-        color: white;
+        color: #23282e;
     }
 
     li a {
@@ -55,13 +55,13 @@
     }
 
     li a:hover {
-        background-color: #009edf;
+        background-color: #b5daec8f;
         color: white;
     }
 
     .active {
-        color: #009edf;
-        background-color: #009edf;
+        /*color: #009edf;*/
+        /*background-color: #009edf;*/
     }
 
 

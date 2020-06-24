@@ -1,4 +1,5 @@
-1.051<template>
+1.051
+<template>
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-xs-12 col-sm-12">
@@ -21,8 +22,9 @@
                                            class="form-control"
                                            v-model.trim="$v.name.$model"
                                            :class="{'is-invalid' :$v.name.$error,
-                                   'is-valid' :!$v.name.$invalid}" >
-                                    <div class="invalid-feedback">Name must be at least {{$v.name.$params.minLength.min}}
+                                   'is-valid' :!$v.name.$invalid}">
+                                    <div class="invalid-feedback">Name must be at least
+                                        {{$v.name.$params.minLength.min}}
                                         characters
                                     </div>
                                 </div>
@@ -71,7 +73,7 @@
 
                     <div class="row">
                         <div class="col-md-12 col-xs-12 col-sm-12">
-                            <button class="btn btn-block btn-lg btn-info" :disabled="corect"> Submit</button>
+                            <button class="btn btn-outline-success" :disabled="corect"> Submit</button>
                         </div>
                     </div>
                 </div>
@@ -87,6 +89,7 @@
     Vue.use(Vuelidate)
 
     import {required, email, minLength, maxLength} from 'vuelidate/lib/validators'
+
     export default {
         name: "ContactUsForm",
         data() {
@@ -143,23 +146,17 @@
         padding-left: 30px;
         margin: 3% auto;
         width: 450px;
-        height:510px;
+        height: 480px;
         box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
-        background-color: rgba(0, 158, 223, 0.8);
+        background-color: white;
         border-radius: 8px;
-        color:white;
-    }
-
-    .btn {
-        background-color: #1161ee;
-        border-radius: 25px;
+        color: black;
     }
 
     .form-control {
         border: none;
-        padding: 15px 20px;
-        border-radius: 25px;
-        background: rgba(175, 218, 235, 0.34);
+        height: 50px;
+        background: rgba(35, 37, 38, 0.07);
 
     }
 

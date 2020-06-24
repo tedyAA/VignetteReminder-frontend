@@ -17,7 +17,7 @@
                 this.$router.push('/welcome')
             },
             logIn() {
-                this.$router.push('/')
+                this.$router.push('/log')
             },
             about() {
                 this.$router.push('/about')
