@@ -94,12 +94,7 @@
             carN: {
                 required,
                 minLength: minLength(6),
-                // isUnique(value) {
-                // return new Promise((resolve => {
-                //
-                // }))
 
-                // }
             },
             VIN: {
                 required
@@ -142,11 +137,6 @@
 </script>
 
 <style scoped>
-
-    /*.input{*/
-    /*    width: 40px;*/
-    /*    height: 20px;*/
-    /*}*/
 
     .main-center {
         margin: 0 auto;

@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <HelloWorld/>
     <router-view/>
     <link rel="shortcut icon" type="image/png" href="/static/logo.png"/>
   </div>
