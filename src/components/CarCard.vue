@@ -53,11 +53,11 @@
                 this.$router.push('/add');
             }
         },
-        computed: {
-            vehicles() {
-                return this.$store.getters['vehicles/vehicles'];
-            }
-        }
+        // computed: {
+        //     vehicles() {
+        //         return this.$store.getters['vehicles/vehicles'];
+        //     }
+        // }
     }
 </script>
 
