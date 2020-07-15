@@ -1,6 +1,7 @@
 <template>
     <div class="RegisterForm">
         <upper-nav-bar>
+            <li><a class="active" >Remind me</a></li>
             <li><a @click="logIn">Log In</a></li>
             <li><a @click="about">About us</a></li>
         </upper-nav-bar>
@@ -33,5 +34,7 @@
 </script>
 
 <style scoped>
-
+    .active{
+        background-color: #007bff8a;
+    }
 </style>

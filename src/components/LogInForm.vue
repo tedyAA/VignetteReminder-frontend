@@ -22,7 +22,8 @@
                             <div class="error" v-if="!$v.pass.required">Field is required</div>
                         </div>
                         <div class="group">
-                            <input type="submit" class="btn btn-primary" value="Sign In" id="btn">
+                            <input type="submit" class="btn btn-primary" @click="onSubmit"
+                                   value="Sign In" id="btn">
                         </div>
                     </div>
                     <div class="for-pwd-htm">

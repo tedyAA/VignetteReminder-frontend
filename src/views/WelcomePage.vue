@@ -1,6 +1,7 @@
 <template>
     <div class="WelcomeForm">
         <upper-nav-bar>
+            <li><a class="active" >Remind me</a></li>
             <li><a @click="aboutus">About us</a></li>
         </upper-nav-bar>
         <h3>Welcome to our webpage</h3>
@@ -71,5 +72,8 @@
         width: 150px;
         height: 50px;
         margin-left:10px;
+    }
+    .active{
+        background-color: #007bff8a;
     }
 </style>

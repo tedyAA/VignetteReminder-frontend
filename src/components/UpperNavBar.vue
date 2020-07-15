@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul>
-            <li><a class="active" >Remind me</a></li>
+<!--            <li><a class="active" >Remind me</a></li>-->
             <slot></slot>
         </ul>
     </div>
@@ -58,11 +58,5 @@
         background-color: #b5daec8f;
         color: white;
     }
-
-    .active {
-        /*color: #009edf;*/
-        /*background-color: #009edf;*/
-    }
-
 
 </style>

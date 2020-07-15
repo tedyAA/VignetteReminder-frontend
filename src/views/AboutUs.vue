@@ -1,6 +1,7 @@
 <template>
     <div>
         <upper-nav-bar>
+            <li><a class="active" >Remind me</a></li>
             <li><a @click="Login">Log In</a></li>
             <li><a @click="Register">Register</a></li>
         </upper-nav-bar>
@@ -78,6 +79,9 @@
         opacity: inherit;
         color:black;
 
+    }
+    .active{
+        background-color: #007bff8a;
     }
 
 </style>
